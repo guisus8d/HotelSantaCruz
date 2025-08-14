@@ -1,11 +1,495 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+// footer and header
+
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import ImgComida from "../assets/Comida/garnacha.jpg";
+
+// Supports weights 100-900
+import "@fontsource-variable/noto-sans-jp";
+
+// importar imagenes del carrusel
+import Uno from "../../public/PrincipalImg.jpg";
+import Dos from "../../public/segundoImg.jpg";
+import Tres from "../../public/terceroImg.jpg";
+
+import Map from "../assets/map_art.png";
 ---
 
+
 <Layout>
-	<Welcome />
+	<Header />
+	<!--  contenedor de informacion principal de la pagina -->
+	<div class="container">
+		<div class="Informacion">
+			<h1>Hotel Santa Cruz Tehuantepec</h1>
+
+			<h3>Bienvenido</h3>
+			<p>
+				Pasa una noche de descanso y tradición. En Hotel Santa Cruz
+				Tehuantepec, cada rincón refleja un ambiente de tranquilidad,
+				confort y autenticidad. Nuestro espacio se encuentra en
+				constante renovación, incorporando detalles artísticos que
+				enriquecen su experiencia y la convierten en una estancia
+				armónica y placentera.
+			</p>
+		</div>
+
+		<div class="carrusel">
+			<div class="carrusel-inner">
+				<div class="carrusel-item">
+					<img src={Uno.src} alt="Imagen 1" />
+				</div>
+				<div class="carrusel-item">
+					<img src={Dos.src} alt="Imagen 2" />
+				</div>
+				<div class="carrusel-item">
+					<img src={Tres.src} alt="Imagen 3" />
+				</div>
+			</div>
+
+			<div class="carrusel-controls">
+				<button class="carrusel-control prev">&#10094;</button>
+				<button class="carrusel-control next">&#10095;</button>
+			</div>
+
+			<div class="carrusel-indicators">
+				<div class="indicator active" data-slide="0"></div>
+				<div class="indicator" data-slide="1"></div>
+				<div class="indicator" data-slide="2"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="contenedorBienvenida">
+		<div class="contenedorSub">
+			<div class="ImageneFondoBienvenida"></div>
+			<div class="contenedorConcepto">
+				<h2>Pasa una buena noche de descanso</h2>
+				<p>
+					La mejor opción para alojarse y disfrutar al máximo de
+					Tehuantepec Descubre un lugar donde la calidez de la
+					hospitalidad oaxaqueña se une con el confort y la
+					tranquilidad. Nuestra ubicación privilegiada en el corazón
+					de Tehuantepec te permite explorar su rica cultura, saborear
+					su exquisita gastronomía y vivir de cerca las tradiciones
+					que hacen única a esta región del Istmo.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="ContenedorComida">
+		<div class="InfoComida">
+			<h2>Sabores de mi tierra</h2>
+			<p>
+				Nuestro chef, apasionado por los sabores auténticos, transforma
+				ingredientes locales en verdaderas obras culinarias. Cada
+				platillo es una fusión entre tradición y creatividad, pensado
+				para ofrecerle una experiencia gastronómica inolvidable.
+			</p>
+		</div>
+
+		<img src={ImgComida.src} alt="Alimentos de Tehuantepec" />
+	</div>
+
+	<div class="ContenedorComoLlegarPrincipal">
+		<div class="ContenedorComoLlegar">
+			<h2>¿Cómo llegar?</h2>
+			<h3>Ubicación</h3>
+
+			<p>
+				Reconocido a nivel mundial por su invaluable riqueza cultural,
+				el Istmo de Tehuantepec se ubica en el estado de Oaxaca, al sur
+				de México, a menos de una hora en avión tanto de la Ciudad de
+				México como de la capital oaxaqueña. <br /> La estratégica ubicación
+				de Juchitán, cercana a importantes destinos de la región como Huatulco,
+				Salina Cruz, Minatitlán y Tuxtla Gutiérrez, lo convierte en un lugar
+				ideal para explorar y disfrutar.
+			</p>
+			<img src={Map.src} alt="" class="mapa" />
+		</div>
+	</div>
+
+	<div class="ContenedorDeAyuda">
+		<h2>¿Necesitas ayuda?</h2>
+		<p>
+			Si tienes alguna pregunta o necesitas más información, no dudes en
+			contactarnos. Estamos aquí para ayudarte a planificar tu estancia y
+			asegurarnos de que tengas una experiencia inolvidable.
+		</p>
+
+		<a href="/contacto" class="reservacion"><button>Contactar</button></a>
+	</div>
+
+	<Footer />
 </Layout>
+
+<style>
+
+
+
+	/* Estilos del carrusel */
+	.carrusel-controls button {
+		display: none;
+	}
+	.carrusel {
+		position: relative;
+		width: 100%;
+		max-width: 800px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+
+	.carrusel-inner {
+		display: flex;
+		transition: transform 0.5s ease-in-out;
+		height: 100%; /* Ajusta según necesites */
+	}
+
+	.carrusel-item {
+		min-width: 100%;
+		height: 100%;
+	}
+
+	.carrusel-item img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.carrusel-controls {
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		transform: translateY(-50%);
+	}
+
+	.carrusel-control {
+		background: rgba(0, 0, 0, 0.5);
+		color: white;
+		border: none;
+		padding: 10px;
+		cursor: pointer;
+		font-size: 18px;
+		z-index: 10;
+	}
+
+	.carrusel-indicators {
+		position: absolute;
+		bottom: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 5px;
+	}
+
+	.indicator {
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background: var(--color-de-fondo-de-elemntos-tipo-2--);
+		cursor: pointer;
+	}
+
+	.indicator.active {
+		background: white;
+	}
+
+	body {
+		background: rgb(255, 255, 255);
+	}
+
+
+
+
+
+	/* contenedor principal */
+	.container {
+		display: flex;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-color: rgb(255, 255, 255);
+	}
+
+	.Informacion {
+		display: flex;
+		position: relative;
+		display: flex;
+		width: 50%;
+		height: 100%;
+		background: var(--color-de-fondo-de-elemntos-tipo-1--);
+	}
+
+	.Informacion h1 {
+		font-family: "Noto Sans JP Variable", sans-serif;
+		color: var(--color-de-texto-tipo-1--);
+		margin: 150px 50px;
+		font-size: 50px;
+	}
+	.Informacion h3 {
+		font-family: "Noto Sans JP Variable", sans-serif;
+		font-size: 25px;
+		padding: 30px 50px;
+		position: absolute;
+		margin: 300px 5px;
+		width: 450px;
+		color: var(--color-de-texto-tipo-1--);
+	}
+	.Informacion p {
+		font-family: "Geist Variable", sans-serif;
+		font-size: 15px;
+		padding: 30px 50px;
+		position: absolute;
+		margin: 350px 5px;
+		width: 450px;
+		color: var(--color-de-texto-tipo-1--);
+	}
+	.ImagenDeReferencia {
+		position: relative;
+		width: 50%;
+		height: 100%;
+		background-image: url("../../public/PrincipalImg.jpg");
+		background-size: cover;
+		background-position: center;
+		right: 0px;
+		display: inline-block;
+	}
+
+
+    @media (max-width: 768px) {
+ 	.Informacion {
+		position: relative; 
+		width: 100%;
+		height: 80%;
+		top: 300px;
+	}
+	
+	.Informacion h1 {
+	    width: 90%;
+		font-size: 40px;
+		margin: 80px 50px;
+	
+	}
+	.Informacion h3 {
+
+		font-size: 20px;
+		padding: 0px 50px;
+		position: absolute;
+		margin: 270px 5px;
+
+	}
+	.Informacion p {
+	
+		font-size: 15px;
+		top: -20px;
+		width: 80%;
+
+	}
+	.carrusel{
+		position: absolute;
+		height: 300px;
+	}
+
+    }
+
+
+
+
+
+
+
+	/* contenedor de bienvenida */
+
+	.contenedorBienvenida {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-color: rgb(255, 255, 255);
+	}
+
+	.contenedorSub {
+		position: relative;
+		width: 80%;
+		height: 90%;
+		background-color: white;
+		margin: 10% auto;
+		display: flex;
+	}
+	.ImageneFondoBienvenida {
+		position: relative;
+		width: 30%;
+		height: 100%;
+		background: url("../../public/Fondo.jpg");
+		background-size: cover;
+	}
+
+	.contenedorConcepto {
+		width: 70%;
+		height: 100%;
+		background-color: rgb(245, 244, 244);
+		position: relative;
+	}
+
+	.contenedorConcepto h2 {
+		position: absolute;
+		font-family: "Noto Sans JP Variable", sans-serif;
+		color: var(--color-de-texto-tipo-1--);
+		margin: 140px 50px;
+		font-size: 30px;
+	}
+
+	.contenedorConcepto p {
+		font-family: "Geist Variable", sans-serif;
+		font-size: 15px;
+		padding: 100px 50px;
+		position: absolute;
+		margin: 100px 5px;
+		width: 450px;
+		color: var(--color-de-texto-tipo-1--);
+	}
+
+	/*Contenedor de alimentos*/
+	.ContenedorComida {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background: var(--color-de-fondo-de-elemntos-tipo-1--);
+		display: flex;
+	}
+	.ContenedorComida img {
+		position: relative;
+		width: 500px;
+		height: 300px;
+		margin: auto;
+	}
+
+	.InfoComida {
+		position: relative;
+		background: rgb(245, 244, 244);
+		height: 100%;
+		width: 40%;
+	}
+
+	.ContenedorComida h2 {
+		position: absolute;
+		font-family: "Noto Sans JP Variable", sans-serif;
+		color: var(--color-de-texto-tipo-1--);
+		margin: 340px 50px;
+		font-size: 30px;
+	}
+
+	.ContenedorComida p {
+		font-family: "Geist Variable", sans-serif;
+		font-size: 15px;
+		padding: 100px 50px;
+		position: absolute;
+		margin: 300px 5px;
+		width: 450px;
+		color: var(--color-de-texto-tipo-1--);
+	}
+
+	/* Contenedor de mapa */
+	.ContenedorComoLlegarPrincipal {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-color: rgb(255, 255, 255);
+	}
+
+	.ContenedorComoLlegar {
+		position: relative;
+		width: 80%;
+		height: 90%;
+		background-color: rgb(31, 150, 206);
+		margin: auto;
+		top: 10%;
+	}
+
+	.mapa {
+		width: 60%;
+		position: absolute;
+		right: 0px;
+		top: 0px;
+	}
+
+	.ContenedorComoLlegar h2,
+	p {
+		font-family: "Geist Variable", sans-serif;
+	}
+	.ContenedorComoLlegar h2 {
+		font-size: 30px;
+		position: relative;
+		color: white;
+		margin: 0px 60px;
+		top: 100px;
+	}
+	.ContenedorComoLlegar p {
+		position: relative;
+		display: flex;
+		width: 500px;
+		color: white;
+		margin: 0px 60px;
+		top: 130px;
+	}
+	.ContenedorComoLlegar h3 {
+		font-family: "Geist Variable", sans-serif;
+		position: relative;
+		display: flex;
+		width: 40%;
+		color: rgb(228, 226, 103);
+		margin: 0px 60px;
+		top: 110px;
+		font-size: 14px;
+	}
+
+	/* Contenedor de ayuda */
+	.ContenedorDeAyuda {
+		position: relative;
+		width: 100%;
+		height: 50%;
+		background-color: white;
+	}
+
+	.ContenedorDeAyuda h2 {
+		position: relative;
+		font-size: 30px;
+		font-family: "Geist Variable", sans-serif;
+		color: var(--color-de-texto-tipo-1--);
+		margin: 20px 50px;
+		top: 50px;
+	}
+	.ContenedorDeAyuda p {
+		position: relative;
+		font-family: "Geist Variable", sans-serif;
+		color: var(--color-de-texto-tipo-1--);
+		width: 500px;
+		font-size: 15px;
+		margin: 20px 50px;
+		top: 50px;
+	}
+
+	.reservacion button {
+		position: relative;
+        margin: 0px 50px;
+		color: white;
+		border: none;
+		padding: 10px 10px;
+		top: 50px;
+		width: 150px;
+		background-color: var(--color-de-texto-tipo-1--);
+		color: var(--color-de-fondo-de-elemntos-tipo-1--);
+		font-weight: 700;
+		font-size: 15px;
+	}
+</style>
+
+<script src="../service/carrusel.js"></script>

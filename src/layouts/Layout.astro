@@ -1,11 +1,15 @@
+
+<!-- Informacion apartado de metya datos de la pagina -->
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="../styles/style-movile.css">
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Hotel Santa Cruz Tehuantepec</title>
 	</head>
 	<body>
 		<slot />
@@ -19,4 +23,21 @@
 		width: 100%;
 		height: 100%;
 	}
+
+/*Estilos de colores usados dentro de la pagina*/
+
+
+:root {
+	/*Color usado naturalmente en la pagina (uso en el fondo de los dic)*/
+	--color-de-fondo-de-elemntos-tipo-1--: rgb(255, 216, 200);
+	/*Color usado en la pagina para fondos secundarios*/
+	--color-de-fondo-de-elemntos-tipo-2--:  rgba(255, 255, 255, 0.5);
+
+	/*Color de texto principal de la pagina*/
+	--color-de-texto-tipo-1--: rgb(80, 67, 63);
+}
+
+
+
+
 </style>

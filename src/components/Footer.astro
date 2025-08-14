@@ -1,0 +1,85 @@
+---
+import HotelSantaCruz from "../assets/HotelSantaCruz.png";
+
+// Supports weights 100-900
+import "@fontsource-variable/noto-sans-jp";
+---
+
+<footer>
+
+       <hr>
+
+    <div class="footer-content">
+        <nav>
+            <ul>
+                <li><a href="/" id="home">HOME</a></li>
+                <li><a href="/habitaciones">HABITACIONES</a></li>
+                <li><a href="/tehuantepec">TEHUANTEPEC</a></li>
+                <li><a href="/contacto">CONTACTO</a></li>
+
+                <a href="/contacto" class="reservacion">RESERVACIONES</a>
+            </ul>
+        </nav>
+    </div>
+
+    <img
+        class="HotelSantaCruz"
+        src={HotelSantaCruz.src}
+        alt="Logo Hotel Santa Cruz Tehuantepec"
+    />
+</footer>
+
+<style>
+    footer {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        background-color: rgb(20, 46, 117);
+        display: flex;
+    }
+
+    .HotelSantaCruz {
+        position: relative;
+        margin: auto;
+        top: 150px;
+    }
+
+    .footer-content {
+        position: absolute;
+        color: white;
+        background-color: transparent;
+        width: 700px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-content li,
+    a,
+    ul {
+        color: white;
+        text-decoration: none;
+        list-style: none;
+        font-family: "Geist Variable", sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        display: inline-block;
+        margin: 5px;
+    }
+    .reservacion {
+        background-color: rgb(236, 61, 163);
+        padding: 10px 20px;
+
+        color: white;
+    }
+
+    hr {
+        position: absolute;
+        width: 90%;
+        height: 2px;
+        background-color: white;
+        margin: 0px 65px;
+        top: 90px;
+    }
+</style>
