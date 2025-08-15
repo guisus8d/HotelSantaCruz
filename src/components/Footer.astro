@@ -6,8 +6,7 @@ import "@fontsource-variable/noto-sans-jp";
 ---
 
 <footer>
-
-       <hr>
+    <hr />
 
     <div class="footer-content">
         <nav>
@@ -81,5 +80,23 @@ import "@fontsource-variable/noto-sans-jp";
         background-color: white;
         margin: 0px 65px;
         top: 90px;
+    }
+
+    @media (max-width: 768px) {
+        .footer-content {
+            width: 100%;
+        }
+
+        .HotelSantaCruz {
+            width: 250px;
+        }
+            hr {
+        position: absolute;
+        width: 90%;
+        height: 2px;
+        background-color: white;
+        margin: 0px 20px;
+        top: 90px;
+    }
     }
 </style>

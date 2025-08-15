@@ -21,7 +21,6 @@ import Tres from "../../public/terceroImg.jpg";
 import Map from "../assets/map_art.png";
 ---
 
-
 <Layout>
 	<Header />
 	<!--  contenedor de informacion principal de la pagina -->
@@ -131,9 +130,6 @@ import Map from "../assets/map_art.png";
 </Layout>
 
 <style>
-
-
-
 	/* Estilos del carrusel */
 	.carrusel-controls button {
 		display: none;
@@ -207,10 +203,6 @@ import Map from "../assets/map_art.png";
 		background: rgb(255, 255, 255);
 	}
 
-
-
-
-
 	/* contenedor principal */
 	.container {
 		display: flex;
@@ -263,49 +255,6 @@ import Map from "../assets/map_art.png";
 		right: 0px;
 		display: inline-block;
 	}
-
-
-    @media (max-width: 768px) {
- 	.Informacion {
-		position: relative; 
-		width: 100%;
-		height: 80%;
-		top: 300px;
-	}
-	
-	.Informacion h1 {
-	    width: 90%;
-		font-size: 40px;
-		margin: 80px 50px;
-	
-	}
-	.Informacion h3 {
-
-		font-size: 20px;
-		padding: 0px 50px;
-		position: absolute;
-		margin: 270px 5px;
-
-	}
-	.Informacion p {
-	
-		font-size: 15px;
-		top: -20px;
-		width: 80%;
-
-	}
-	.carrusel{
-		position: absolute;
-		height: 300px;
-	}
-
-    }
-
-
-
-
-
-
 
 	/* contenedor de bienvenida */
 
@@ -479,7 +428,7 @@ import Map from "../assets/map_art.png";
 
 	.reservacion button {
 		position: relative;
-        margin: 0px 50px;
+		margin: 0px 50px;
 		color: white;
 		border: none;
 		padding: 10px 10px;
@@ -489,6 +438,129 @@ import Map from "../assets/map_art.png";
 		color: var(--color-de-fondo-de-elemntos-tipo-1--);
 		font-weight: 700;
 		font-size: 15px;
+	}
+
+	@media (max-width: 768px) {
+		.ContenedorComoLlegar {
+			width: 100%;
+		}
+
+		.ContenedorComoLlegar img {
+			width: 90%;
+		}
+
+		.ContenedorComoLlegar h2 {
+			top: 340px;
+			left: -5%;
+		}
+		.ContenedorComoLlegar h3 {
+			top: 350px;
+			left: -5%;
+		}
+		.ContenedorComoLlegar p {
+			top: 390px;
+			width: 80%;
+			left: -5%;
+		}
+		.Informacion {
+			position: relative;
+			width: 100%;
+			height: 80%;
+			top: 300px;
+		}
+
+		.Informacion h1 {
+			width: 90%;
+			font-size: 40px;
+			margin: 80px 50px;
+		}
+		.Informacion h3 {
+			font-size: 25px;
+			padding: 0px 50px;
+			position: absolute;
+			margin: 220px 5px;
+		}
+		.Informacion p {
+			font-size: 15px;
+			margin: 250px 5px;
+			width: 80%;
+		}
+		.carrusel {
+			position: absolute;
+			height: 300px;
+		}
+
+		.ImageneFondoBienvenida {
+			display: none;
+		}
+
+		.contenedorConcepto h2 {
+			font-size: 25px;
+			width: 80%;
+			margin: 10%;
+			top: 10%;
+		}
+
+		.contenedorConcepto p {
+			position: relative;
+			font-size: 15px;
+			width: 80%;
+			padding: 0% 10%;
+			top: 120px;
+		}
+
+		.contenedorConcepto {
+			width: 100%;
+		}
+
+		.contenedorSub {
+			position: relative;
+			width: 90%;
+			height: 80%;
+			top: 10%;
+		}
+
+		.ContenedorComida {
+			position: relative;
+			width: 100%;
+			height: 80%;
+		}
+		.InfoComida {
+			position: absolute;
+			width: 100%;
+
+			background-color: var(--color-de-fondo-de-elemntos-tipo-1--);
+		}
+
+		.ContenedorComida p {
+			top: 20px;
+			width: 80%;
+			margin-top: 30px;
+		}
+		.ContenedorComida h2 {
+			position: relative;
+			width: 250px;
+			margin-top: 80px;
+			font-size: 25px;
+		}
+		.ContenedorComida img {
+			position: absolute;
+			width: 300px;
+			height: 200px;
+			margin-top: 400px;
+			left: 50%;
+			transform: translate(-50%, -0%);
+		}
+
+		.ContenedorDeAyuda h2{
+			font-size: 25px;
+			left: 0px;
+		}
+		.ContenedorDeAyuda p {
+			width: 80%;
+			margin: 30px auto;
+			font-size: 15px;
+		}
 	}
 </style>
 
