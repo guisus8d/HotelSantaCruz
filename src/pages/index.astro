@@ -83,8 +83,6 @@ import Map from "../assets/map_art.png";
 		</div>
 	</div>
 
-
-
 	<div class="ContenedorComoLlegarPrincipal">
 		<div class="ContenedorComoLlegar">
 			<h2>¿Cómo llegar?</h2>
@@ -118,6 +116,12 @@ import Map from "../assets/map_art.png";
 </Layout>
 
 <style>
+	html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 	/* Estilos del carrusel */
 	.carrusel-controls button {
 		display: none;
@@ -146,8 +150,6 @@ import Map from "../assets/map_art.png";
 		height: 100%;
 		object-fit: cover;
 	}
-
-
 
 	.carrusel-control {
 		background: rgba(0, 0, 0, 0.5);
@@ -415,8 +417,8 @@ import Map from "../assets/map_art.png";
 		padding: 10px 10px;
 		top: 50px;
 		width: 150px;
-		background-color: var(--color-de-texto-tipo-1--);
-		color: var(--color-de-fondo-de-elemntos-tipo-1--);
+		background-color: rgb(236, 61, 163);
+		color: white;
 		font-weight: 700;
 		font-size: 15px;
 	}
@@ -450,32 +452,26 @@ import Map from "../assets/map_art.png";
 			height: 700px;
 			top: 300px;
 			padding: 0px;
-		    
-		
 		}
 
 		.Informacion h1 {
 			width: 300px;
-			font-size: 35px;
-			margin: 80px 20px;
+			font-size: 25px;
+			margin: 100px 20px;
 			position: absolute;
-		
 		}
 		.Informacion h3 {
-			font-size: 25px;
+			font-size: 18px;
 			padding: 0px 20px;
 			margin: 190px 5px;
 			position: absolute;
-			
 		}
 		.Informacion p {
 			font-size: 15px;
 			margin: 250px -20px;
 			width: 80%;
 			position: absolute;
-			
 		}
-
 
 		.carrusel {
 			position: absolute;
@@ -504,7 +500,6 @@ import Map from "../assets/map_art.png";
 		.contenedorConcepto {
 			width: 100%;
 			height: 600px;
-			
 		}
 
 		.contenedorSub {
@@ -545,11 +540,12 @@ import Map from "../assets/map_art.png";
 			left: 50%;
 			transform: translate(-50%, -0%);
 		}
-     .ContenedorComoLlegar{
+		.ContenedorComoLlegar {
 			height: 1000px;
 		}
-		.ContenedorDeAyuda{
+		.ContenedorDeAyuda {
 			margin-top: 300px;
+			height: 400px;
 		}
 		.ContenedorDeAyuda h2 {
 			font-size: 25px;
@@ -567,11 +563,9 @@ import Map from "../assets/map_art.png";
 		.reservacion button {
 			margin-left: 30px;
 		}
-		.contenedorBienvenida{
+		.contenedorBienvenida {
 			margin-top: 300px;
 		}
-	
-
 	}
 </style>
 
