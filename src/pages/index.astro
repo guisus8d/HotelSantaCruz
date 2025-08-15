@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 
 // footer and header
 
-
+import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import ImgComida from "../assets/Comida/garnacha.jpg";
 
@@ -22,11 +22,111 @@ import Map from "../assets/map_art.png";
 ---
 
 <Layout>
-	<Header />	
+	<Header />
+	<!--  contenedor de informacion principal de la pagina -->
+	<div class="container">
+		<div class="Informacion">
+			<h1>Hotel Santa Cruz Tehuantepec</h1>
 
-	
+			<h3>Bienvenido</h3>
+			<p>
+				Pasa una noche de descanso y tradición. En Hotel Santa Cruz
+				Tehuantepec, cada rincón refleja un ambiente de tranquilidad,
+				confort y autenticidad. Nuestro espacio se encuentra en
+				constante renovación, incorporando detalles artísticos que
+				enriquecen su experiencia y la convierten en una estancia
+				armónica y placentera.
+			</p>
+		</div>
 
-	
+		<div class="carrusel">
+			<div class="carrusel-inner">
+				<div class="carrusel-item">
+					<img src={Uno.src} alt="Imagen 1" />
+				</div>
+				<div class="carrusel-item">
+					<img src={Dos.src} alt="Imagen 2" />
+				</div>
+				<div class="carrusel-item">
+					<img src={Tres.src} alt="Imagen 3" />
+				</div>
+			</div>
+
+			<div class="carrusel-controls">
+				<button class="carrusel-control prev">&#10094;</button>
+				<button class="carrusel-control next">&#10095;</button>
+			</div>
+
+			<div class="carrusel-indicators">
+				<div class="indicator active" data-slide="0"></div>
+				<div class="indicator" data-slide="1"></div>
+				<div class="indicator" data-slide="2"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="contenedorBienvenida">
+		<div class="contenedorSub">
+			<div class="ImageneFondoBienvenida"></div>
+			<div class="contenedorConcepto">
+				<h2>Pasa una buena noche de descanso</h2>
+				<p>
+					La mejor opción para alojarse y disfrutar al máximo de
+					Tehuantepec Descubre un lugar donde la calidez de la
+					hospitalidad oaxaqueña se une con el confort y la
+					tranquilidad. Nuestra ubicación privilegiada en el corazón
+					de Tehuantepec te permite explorar su rica cultura, saborear
+					su exquisita gastronomía y vivir de cerca las tradiciones
+					que hacen única a esta región del Istmo.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="ContenedorComida">
+		<div class="InfoComida">
+			<h2>Sabores de mi tierra</h2>
+			<p>
+				Nuestro chef, apasionado por los sabores auténticos, transforma
+				ingredientes locales en verdaderas obras culinarias. Cada
+				platillo es una fusión entre tradición y creatividad, pensado
+				para ofrecerle una experiencia gastronómica inolvidable.
+			</p>
+		</div>
+
+		<img src={ImgComida.src} alt="Alimentos de Tehuantepec" />
+	</div>
+
+	<div class="ContenedorComoLlegarPrincipal">
+		<div class="ContenedorComoLlegar">
+			<h2>¿Cómo llegar?</h2>
+			<h3>Ubicación</h3>
+
+			<p>
+				Reconocido a nivel mundial por su invaluable riqueza cultural,
+				el Istmo de Tehuantepec se ubica en el estado de Oaxaca, al sur
+				de México, a menos de una hora en avión tanto de la Ciudad de
+				México como de la capital oaxaqueña. <br /> La estratégica ubicación
+				de Juchitán, cercana a importantes destinos de la región como Huatulco,
+				Salina Cruz, Minatitlán y Tuxtla Gutiérrez, lo convierte en un lugar
+				ideal para explorar y disfrutar.
+			</p>
+			<img src={Map.src} alt="" class="mapa" />
+		</div>
+	</div>
+
+	<div class="ContenedorDeAyuda">
+		<h2>¿Necesitas ayuda?</h2>
+		<p>
+			Si tienes alguna pregunta o necesitas más información, no dudes en
+			contactarnos. Estamos aquí para ayudarte a planificar tu estancia y
+			asegurarnos de que tengas una experiencia inolvidable.
+		</p>
+
+		<a href="/contacto" class="reservacion"><button>Contactar</button></a>
+	</div>
+
+	<Footer />
 </Layout>
 
 <style>
@@ -340,7 +440,130 @@ import Map from "../assets/map_art.png";
 		font-size: 15px;
 	}
 
+	@media (max-width: 768px) {
+		.ContenedorComoLlegar {
+			width: 100%;
+		}
 
+		.ContenedorComoLlegar img {
+			width: 90%;
+		}
+
+		.ContenedorComoLlegar h2 {
+			top: 340px;
+			left: -5%;
+		}
+		.ContenedorComoLlegar h3 {
+			top: 350px;
+			left: -5%;
+		}
+		.ContenedorComoLlegar p {
+			top: 390px;
+			width: 80%;
+			left: -5%;
+		}
+		.Informacion {
+			position: relative;
+			width: 100%;
+			height: 80%;
+			top: 300px;
+		}
+
+		.Informacion h1 {
+			width: 90%;
+			font-size: 40px;
+			margin: 80px 50px;
+		}
+		.Informacion h3 {
+			font-size: 25px;
+			padding: 0px 50px;
+			position: absolute;
+			margin: 220px 5px;
+		}
+		.Informacion p {
+			font-size: 15px;
+			margin: 250px 5px;
+			width: 80%;
+		}
+		.carrusel {
+			position: absolute;
+			height: 300px;
+		}
+
+		.ImageneFondoBienvenida {
+			display: none;
+		}
+
+		.contenedorConcepto h2 {
+			font-size: 25px;
+			width: 80%;
+			margin: 10%;
+			top: 10%;
+		}
+
+		.contenedorConcepto p {
+			position: relative;
+			font-size: 15px;
+			width: 80%;
+			padding: 0% 10%;
+			top: 120px;
+		}
+
+		.contenedorConcepto {
+			width: 100%;
+		}
+
+		.contenedorSub {
+			position: relative;
+			width: 90%;
+			height: 80%;
+			top: 10%;
+		}
+
+		.ContenedorComida {
+			position: relative;
+			width: 100%;
+			height: 80%;
+		}
+		.InfoComida {
+			position: absolute;
+			width: 100%;
+
+			background-color: var(--color-de-fondo-de-elemntos-tipo-1--);
+		}
+
+		.ContenedorComida p {
+			top: 20px;
+			width: 80%;
+			margin-top: 30px;
+		}
+		.ContenedorComida h2 {
+			position: relative;
+			width: 250px;
+			margin-top: 80px;
+			font-size: 25px;
+		}
+		.ContenedorComida img {
+			position: absolute;
+			width: 300px;
+			height: 200px;
+			margin-top: 400px;
+			left: 50%;
+			transform: translate(-50%, -0%);
+		}
+
+		.ContenedorDeAyuda h2{
+			font-size: 25px;
+		}
+		.ContenedorDeAyuda p {
+			width: 80%;
+			margin: 20px auto;
+			font-size: 15px
+	}
+	.container {
+		width: 90%;
+	}
+}
 </style>
 
 <script src="../service/carrusel.js"></script>
