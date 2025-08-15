@@ -3,13 +3,11 @@ import HotelSantaCruz from "../assets/HotelSantaCruz.png";
 
 // Supports weights 100-900
 import "@fontsource-variable/noto-sans-jp";
+import "@fontsource-variable/ibm-plex-sans";
 ---
 
 <footer>
-
-
     <div class="footer-content">
-        
         <nav>
             <ul>
                 <li><a href="/" id="home">HOME</a></li>
@@ -20,14 +18,21 @@ import "@fontsource-variable/noto-sans-jp";
                 <a href="/contacto" class="reservacion">RESERVACIONES</a>
             </ul>
         </nav>
-      
     </div>
 
-    <img
-        class="HotelSantaCruz"
-        src={HotelSantaCruz.src}
-        alt="Logo Hotel Santa Cruz Tehuantepec"
-    />
+    <div class="footer-contact">
+        01 (958) 587 108001 <br />
+        (958) 587 1087 <br />
+        WhatsApp +52 1 (958) 1092502 <br />
+        info@hotelsantacruzhuatulco.com <br />
+    </div>
+    <center>
+        <img
+            class="HotelSantaCruz"
+            src={HotelSantaCruz.src}
+            alt="Logo Hotel Santa Cruz Tehuantepec"
+        />
+    </center>
 </footer>
 
 <style>
@@ -40,9 +45,11 @@ import "@fontsource-variable/noto-sans-jp";
     }
 
     .HotelSantaCruz {
-        position: relative;
+        position: absolute;
         margin: auto;
-        top: 150px;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, 0%);
     }
 
     .footer-content {
@@ -54,6 +61,7 @@ import "@fontsource-variable/noto-sans-jp";
         display: flex;
         justify-content: center;
         align-items: center;
+        top: -40px;
     }
 
     .footer-content li,
@@ -62,9 +70,9 @@ import "@fontsource-variable/noto-sans-jp";
         color: white;
         text-decoration: none;
         list-style: none;
-        font-family: "Geist Variable", sans-serif;
         font-weight: 600;
-       
+        font-weight: 400;
+        font-family: 'IBM Plex Sans Variable', sans-serif;
         display: inline-block;
         margin: 5px;
     }
@@ -84,28 +92,46 @@ import "@fontsource-variable/noto-sans-jp";
         top: 90px;
     }
 
+    .footer-contact {
+        position: absolute;
+        display: flex;
+        width: 200px;
+        height: 300px;
+        color: white;
+        left: 70%;
+        top: 18%;
+        font-weight: 400;
+        font-family: "IBM Plex Sans Variable", sans-serif;
+        font-size: 17px;
+    }
+
     @media (max-width: 768px) {
         .footer-content {
             width: 100%;
-
-    
-           }
+        }
 
         .HotelSantaCruz {
-            width: 250px;
+            width: 200px;
         }
-            hr {
-        position: absolute;
-        width: 90%;
-        height: 2px;
-        background-color: white;
-        margin: 0px 20px;
-        top: 90px;
-    }
-        .footer-content li,
-    a,
-    ul {
-        font-size: 13px;
-    }
+        hr {
+            position: absolute;
+            width: 90%;
+            height: 2px;
+            background-color: white;
+            margin: 0px 20px;
+            top: 90px;
+        }
+
+        .footer-contact{
+            top: 50%;
+            left: 50px;
+        }
+        .footer-contact{
+            background-color: transparent;
+            width: 90%;
+           height: 100px;
+           
+        }
+  
     }
 </style>
