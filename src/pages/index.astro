@@ -24,7 +24,46 @@ import Map from "../assets/map_art.png";
 <Layout>
 	<Header />
 	<!--  contenedor de informacion principal de la pagina -->
+	<div class="container">
+		<div class="Informacion">
+			<h1>Hotel Santa Cruz Tehuantepec</h1>
 
+			<h3>Bienvenido</h3>
+			<p>
+				Pasa una noche de descanso y tradición. En Hotel Santa Cruz
+				Tehuantepec, cada rincón refleja un ambiente de tranquilidad,
+				confort y autenticidad. Nuestro espacio se encuentra en
+				constante renovación, incorporando detalles artísticos que
+				enriquecen su experiencia y la convierten en una estancia
+				armónica y placentera.
+			</p>
+		</div>
+
+		<div class="carrusel">
+			<div class="carrusel-inner">
+				<div class="carrusel-item">
+					<img src={Uno.src} alt="Imagen 1" />
+				</div>
+				<div class="carrusel-item">
+					<img src={Dos.src} alt="Imagen 2" />
+				</div>
+				<div class="carrusel-item">
+					<img src={Tres.src} alt="Imagen 3" />
+				</div>
+			</div>
+
+			<div class="carrusel-controls">
+				<button class="carrusel-control prev">&#10094;</button>
+				<button class="carrusel-control next">&#10095;</button>
+			</div>
+
+			<div class="carrusel-indicators">
+				<div class="indicator active" data-slide="0"></div>
+				<div class="indicator" data-slide="1"></div>
+				<div class="indicator" data-slide="2"></div>
+			</div>
+		</div>
+	</div>
 
 	<div class="contenedorBienvenida">
 		<div class="contenedorSub">
@@ -87,7 +126,7 @@ import Map from "../assets/map_art.png";
 		<a href="/contacto" class="reservacion"><button>Contactar</button></a>
 	</div>
 
-
+	<Footer />
 </Layout>
 
 <style>
@@ -401,129 +440,151 @@ import Map from "../assets/map_art.png";
 		font-size: 15px;
 	}
 
-	@media (max-width: 768px) {
-		.ContenedorComoLlegar {
-			width: 100%;
-		}
-
-		.ContenedorComoLlegar img {
-			width: 90%;
-		}
-
-		.ContenedorComoLlegar h2 {
-			top: 340px;
-			left: -5%;
-		}
-		.ContenedorComoLlegar h3 {
-			top: 350px;
-			left: -5%;
-		}
-		.ContenedorComoLlegar p {
-			top: 390px;
-			width: 80%;
-			left: -5%;
-		}
-		.Informacion {
-			position: relative;
-			width: 100%;
-			height: 80%;
-			top: 300px;
-		}
-
-		.Informacion h1 {
-			width: 90%;
-			font-size: 40px;
-			margin: 80px 50px;
-		}
-		.Informacion h3 {
-			font-size: 25px;
-			padding: 0px 50px;
-			position: absolute;
-			margin: 220px 5px;
-		}
-		.Informacion p {
-			font-size: 15px;
-			margin: 250px 5px;
-			width: 80%;
-		}
-		.carrusel {
-			position: absolute;
-			height: 300px;
-		}
-
-		.ImageneFondoBienvenida {
-			display: none;
-		}
-
-		.contenedorConcepto h2 {
-			font-size: 25px;
-			width: 80%;
-			margin: 10%;
-			top: 10%;
-		}
-
-		.contenedorConcepto p {
-			position: relative;
-			font-size: 15px;
-			width: 80%;
-			padding: 0% 10%;
-			top: 120px;
-		}
-
-		.contenedorConcepto {
-			width: 100%;
-		}
-
-		.contenedorSub {
-			position: relative;
-			width: 90%;
-			height: 80%;
-			top: 10%;
-		}
-
-		.ContenedorComida {
-			position: relative;
-			width: 100%;
-			height: 80%;
-		}
-		.InfoComida {
-			position: absolute;
-			width: 100%;
-
-			background-color: var(--color-de-fondo-de-elemntos-tipo-1--);
-		}
-
-		.ContenedorComida p {
-			top: 20px;
-			width: 80%;
-			margin-top: 30px;
-		}
-		.ContenedorComida h2 {
-			position: relative;
-			width: 250px;
-			margin-top: 80px;
-			font-size: 25px;
-		}
-		.ContenedorComida img {
-			position: absolute;
-			width: 300px;
-			height: 200px;
-			margin-top: 400px;
-			left: 50%;
-			transform: translate(-50%, -0%);
-		}
-
-		.ContenedorDeAyuda h2{
-			font-size: 25px;
-		}
-		.ContenedorDeAyuda p {
-			width: 80%;
-			margin: 20px auto;
-			font-size: 15px
-	}
-	.container {
-		width: 90%;
-	}
+@media (max-width: 768px) {
+    /* Reset de márgenes y padding para evitar desbordamientos */
+    body {
+        overflow-x: hidden;
+    }
+    
+    /* Contenedor principal */
+    .container {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .Informacion {
+        width: 100%;
+        position: static;
+        top: auto;
+        padding: 20px;
+        margin: 0;
+        order: 2; /* Cambia el orden para móviles */
+    }
+    
+    .Informacion h1 {
+        width: 90%;
+        font-size: 2rem;
+        margin: 20px auto;
+        text-align: center;
+    }
+    
+    .Informacion h3, 
+    .Informacion p {
+        position: static;
+        width: 90%;
+        margin: 20px auto;
+        padding: 0;
+    }
+    
+    /* Carrusel */
+    .carrusel {
+        position: relative;
+        height: 250px;
+        width: 100%;
+        order: 1; /* Lo movemos arriba en móviles */
+        margin-top: 20px;
+    }
+    
+    /* Sección de bienvenida */
+    .contenedorSub {
+        flex-direction: column;
+        width: 90%;
+        margin: 20px auto;
+    }
+    
+    .contenedorConcepto {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .contenedorConcepto h2 {
+        position: static;
+        margin: 0 0 20px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .contenedorConcepto p {
+        position: static;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    /* Sección de comida */
+    .ContenedorComida {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    
+    .InfoComida {
+        width: 100%;
+        padding: 20px;
+        position: static;
+    }
+    
+    .ContenedorComida h2,
+    .ContenedorComida p {
+        position: static;
+        width: 90%;
+        margin: 10px auto;
+        text-align: center;
+    }
+    
+    .ContenedorComida img {
+        position: static;
+        width: 90%;
+        height: auto;
+        margin: 20px auto;
+        display: block;
+        transform: none;
+    }
+    
+    /* Sección del mapa */
+    .ContenedorComoLlegar {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+        position: static;
+    }
+    
+    .mapa {
+        position: static;
+        width: 100%;
+        margin: 20px 0;
+    }
+    
+    .ContenedorComoLlegar h2,
+    .ContenedorComoLlegar h3,
+    .ContenedorComoLlegar p {
+        position: static;
+        width: 100%;
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    /* Sección de ayuda */
+    .ContenedorDeAyuda {
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .ContenedorDeAyuda h2,
+    .ContenedorDeAyuda p {
+        width: 100%;
+        margin: 10px auto;
+        position: static;
+    }
+    
+    .reservacion button {
+        margin: 20px auto;
+        position: static;
+        display: block;
+    }
 }
 </style>
 
