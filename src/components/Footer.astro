@@ -4,9 +4,18 @@ import HotelSantaCruz from "../assets/HotelSantaCruz.png";
 // Supports weights 100-900
 import "@fontsource-variable/noto-sans-jp";
 import "@fontsource-variable/ibm-plex-sans";
+
+// importar imagenes del footer
+import ImgFooterFacebook from "../assets/Footer/facebook.png";
 ---
 
 <footer>
+    <img
+        class="FooterFacebook"
+        src={ImgFooterFacebook.src}
+        alt="Imagen lofo de Facebook en el footer"
+    />
+
     <div class="footer-content">
         <nav>
             <ul>
@@ -104,9 +113,22 @@ import "@fontsource-variable/ibm-plex-sans";
         font-size: 17px;
     }
 
+    .FooterFacebook {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        left: 94%;
+        top: 20px;
+        transform: translate(0%, 0%);
+    }
+
     @media (max-width: 768px) {
+        footer {
+            height: 100%;
+        }
         .footer-content {
             width: 100%;
+            top: 0px;
         }
 
         .HotelSantaCruz {
@@ -129,6 +151,14 @@ import "@fontsource-variable/ibm-plex-sans";
             background-color: transparent;
             width: 90%;
             height: 100px;
+        }
+        .FooterFacebook {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            left: 90%;
+            top: 20px;
+            transform: translate(-50%, 0%);
         }
     }
 </style>
