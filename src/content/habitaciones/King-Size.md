@@ -5,9 +5,6 @@ amenities:
   - • WiFi
   - • TV 4K
   - • Aire acondicionado
-  - • WiFi
-  - • TV 4K
-  - • Aire acondicionado
 images: kingsize.jpg
 ---
 
