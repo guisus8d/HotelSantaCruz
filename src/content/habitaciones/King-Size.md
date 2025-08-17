@@ -1,10 +1,13 @@
 ---
-title: King Size
-description: Una habitación espaciosa con vista al mar.
+title: KING SIZE
+description: Habitaciones equipadas con cama King Size y sofá cama, ideales para brindar el máximo confort a toda la familia durante su viaje. Cuentan con una variedad de amenidades pensadas para hacer su estancia más cómoda y agradable.
 amenities:
-  - WiFi
-  - TV 4K
-  - Aire acondicionado
+  - • WiFi
+  - • TV 4K
+  - • Aire acondicionado
+  - • WiFi
+  - • TV 4K
+  - • Aire acondicionado
 images: kingsize.jpg
 ---
 
