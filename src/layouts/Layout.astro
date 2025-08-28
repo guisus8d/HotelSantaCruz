@@ -9,6 +9,8 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang="en">
 	<head>
+		<meta name="color-scheme" content="light" />
+		<meta name="theme-color" content="#ffffff" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -16,16 +18,21 @@ const { title } = Astro.props;
 		<title>{title}</title>
 		<!-- Metadatos estándar -->
 
-<meta name="description" content="El Hotel Santa Cruz Tehuantepec ofrece una estancia cómoda y acogedora en el corazón de Tehuantepec, Oaxaca.">
+		<meta
+			name="description"
+			content="El Hotel Santa Cruz Tehuantepec ofrece una estancia cómoda y acogedora en el corazón de Tehuantepec, Oaxaca."
+		/>
 
-<!-- Open Graph (Facebook, WhatsApp, LinkedIn, etc.) -->
-<meta property="og:title" content="Hotel Santa Cruz Tehuantepec">
-<meta property="og:description" content="El Hotel Santa Cruz Tehuantepec ofrece una estancia cómoda y acogedora en el corazón de Tehuantepec, Oaxaca.">
-<meta property="og:image" content="/logo.png">
-<meta property="og:url" content="www.hotelsantacruztehuantepec.com">
-<meta property="og:type" content="website"> <!-- o "article", "product", etc. -->
-
-
+		<!-- Open Graph (Facebook, WhatsApp, LinkedIn, etc.) -->
+		<meta property="og:title" content="Hotel Santa Cruz Tehuantepec" />
+		<meta
+			property="og:description"
+			content="El Hotel Santa Cruz Tehuantepec ofrece una estancia cómoda y acogedora en el corazón de Tehuantepec, Oaxaca."
+		/>
+		<meta property="og:image" content="/logo.png" />
+		<meta property="og:url" content="www.hotelsantacruztehuantepec.com" />
+		<meta property="og:type" content="website" />
+		<!-- o "article", "product", etc. -->
 	</head>
 	<body>
 		<slot />
@@ -40,27 +47,22 @@ const { title } = Astro.props;
 		height: 100%;
 	}
 
-/*Estilos de colores usados dentro de la pagina*/
+	/*Estilos de colores usados dentro de la pagina*/
 
+	:root {
+		/*Color usado naturalmente en la pagina (uso en el fondo de los dic)*/
+		--color-de-fondo-de-elemntos-tipo-1--: rgb(255, 216, 200);
+		/*Color usado en la pagina para fondos secundarios*/
+		--color-de-fondo-de-elemntos-tipo-2--: rgba(255, 255, 255, 0.5);
 
-:root {
-	/*Color usado naturalmente en la pagina (uso en el fondo de los dic)*/
-	--color-de-fondo-de-elemntos-tipo-1--: rgb(255, 216, 200);
-	/*Color usado en la pagina para fondos secundarios*/
-	--color-de-fondo-de-elemntos-tipo-2--:  rgba(255, 255, 255, 0.5);
+		/*Color de texto principal de la pagina*/
+		--color-de-texto-tipo-1--: rgb(80, 67, 63);
+		--color-de-texto-tipo-2--: rgb(95, 86, 76);
 
-	/*Color de texto principal de la pagina*/
-	--color-de-texto-tipo-1--: rgb(80, 67, 63);
-	--color-de-texto-tipo-2--: rgb(95, 86, 76);
+		--color-de-texto-habitacion-tipo-1--: rgb(167, 140, 130);
+	}
 
-	--color-de-texto-habitacion-tipo-1--: rgb(167, 140, 130);
-}
-
-/* los texto tienen tama;os diferentes 25 para pc que es lo mas grande */
-/* 15 que es lo mas peque;o */
-/* en movil 20 lo mas grande y 13 lo mas peque;o */
-
-
-
-
+	/* los texto tienen tama;os diferentes 25 para pc que es lo mas grande */
+	/* 15 que es lo mas peque;o */
+	/* en movil 20 lo mas grande y 13 lo mas peque;o */
 </style>
