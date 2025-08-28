@@ -334,7 +334,7 @@ import Map from "../assets/map_art.png";
 		position: absolute;
 		font-family: "Noto Sans JP Variable", sans-serif;
 		color: var(--color-de-texto-tipo-1--);
-		margin: 340px 20px;
+		margin: 340px 25px;
 		font-size: 30px;
 	}
 
@@ -443,6 +443,35 @@ import Map from "../assets/map_art.png";
 	}
 
 	@media (max-width: 768px) {
+		    /* ... (tus estilos existentes) ... */
+    
+    /* Añade estos estilos específicos */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    .container {
+        width: 100vw;
+        overflow: hidden;
+    }
+    
+    .carrusel {
+        width: 100vw;
+        max-width: 100vw;
+        margin: 0;
+        padding: 0;
+        left: 0;
+    }
+    
+    .carrusel-item {
+        min-width: 100vw;
+    }
+    
+    .carrusel-item img {
+        width: 100vw;
+    }
+	
 		.ContenedorComoLlegar {
 			width: 100%;
 		}
