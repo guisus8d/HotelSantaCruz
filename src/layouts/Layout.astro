@@ -1,5 +1,10 @@
+---
+interface Props {
+	title: String;
+}
 
-<!-- Informacion apartado de metya datos de la pagina -->
+const { title } = Astro.props;
+---
 
 <!doctype html>
 <html lang="en">
@@ -8,7 +13,7 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Hotel Santa Cruz Tehuantepec</title>
+		<title>{title}</title>
 		<!-- Metadatos estándar -->
 
 <meta name="description" content="El Hotel Santa Cruz Tehuantepec ofrece una estancia cómoda y acogedora en el corazón de Tehuantepec, Oaxaca.">
