@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+
+
+import TehuantepecParner from "../assets/Tehuantepec/Tehuantepec-Parner.jpg"
+---
+
+<Layout title="Tehuantepec | Hotel Santa Cruz Tehuantepec">
+    <Header />
+    <img class="TehuantepecParner" src={TehuantepecParner.src} alt="Parner imagen de Tehuantepec">
+
+    <Footer />
+</Layout>
+
+
+<style>
+
+    .TehuantepecParner{
+        width: 100%;
+        height: auto;
+        
+    }
+</style>
