@@ -12,14 +12,13 @@ import "@fontsource-variable/noto-sans-jp";
 <Layout title="Tehuantepec | Hotel Santa Cruz Tehuantepec">
     <Header />
 
- 
     <form action="">
         <div class="form-container">
             <h2>Formulario</h2>
 
             <div class="inputBox">
                 <input required="" type="text" />
-                <span>Numero</span>
+                <span>Nombre</span>
             </div>
 
             <div class="inputBox">
@@ -37,19 +36,33 @@ import "@fontsource-variable/noto-sans-jp";
                 ></textarea>
             </div>
 
-            <input type="submit" value="Enviar" class="BotonEnviarFormulario"/>
+            <input type="submit" value="Enviar" class="BotonEnviarFormulario" />
         </div>
     </form>
+
+    <div class="ContenedorDeContacto">
+        <h2>Habitaciones</h2>
+        <p>
+            Descubre la mejor combinación de precio y confort para tu próximo
+            viaje. Planifica tu estancia con nosotros y deja que nos encarguemos
+            de cada detalle. Consulta la disponibilidad de nuestras habitaciones
+            y realiza tu reserva de forma fácil y rápida.
+        </p>
+
+        <a href="/Habitaciones" class="reservacion"
+            ><button>Habitaciones</button></a
+        >
+    </div>
+
     <Footer />
 </Layout>
 
 <style>
-    h2{
+    h2 {
         color: rgb(80, 67, 63);
         position: relative;
         margin-left: 30px;
         top: 10px;
-        
     }
     form {
         position: relative;
@@ -65,16 +78,16 @@ import "@fontsource-variable/noto-sans-jp";
     .form-container {
         position: relative;
         width: 500px;
-        background-color: rgb(235, 235, 235);
+        background-color: rgb(243, 243, 243);
         font-family: "Noto Sans JP Variable", sans-serif;
         margin-bottom: 100px;
         margin-top: 100px;
     }
-    .BotonEnviarFormulario{
+    .BotonEnviarFormulario {
         background-color: rgb(80, 67, 63);
         color: rgb(255, 216, 200);
         border: none;
-        padding: 20px 50px;
+        padding: 15px 40px;
         font-size: 15px;
         border-radius: 7px;
         margin-left: 30px;
@@ -93,9 +106,9 @@ import "@fontsource-variable/noto-sans-jp";
         outline: none;
         background: transparent;
         border-radius: 5px;
-        color: #fff;
+        color: rgb(80, 67, 63);
         border: 2px solid rgb(80, 67, 63);
-        font-size: 1em;
+        font-size: 15px;
         margin: 20px 30px;
         width: 70%;
     }
@@ -103,7 +116,7 @@ import "@fontsource-variable/noto-sans-jp";
     .inputBox span {
         position: absolute;
         left: 0;
-        padding: 33px 50px;
+        padding: 37px 50px;
         pointer-events: none;
         font-size: 1em;
         transition: 0.4s cubic-bezier(0.05, 0.81, 0, 0.93);
@@ -117,12 +130,78 @@ import "@fontsource-variable/noto-sans-jp";
         transform: translateX(50px) translateY(10px);
         padding: 0 5px;
         border-radius: 2px;
-        background: white;
+        background: rgb(243, 243, 243);
         letter-spacing: 0em;
+        color: rgb(80, 67, 63);
     }
-    .FlorImg{
+    /* Contenedor de ayuda */
+    .ContenedorDeContacto {
         position: relative;
-        width: 50px;
-        top: 15px;
+        width: 100%;
+        height: 50%;
+        background-color: white;
+    }
+
+    .ContenedorDeContacto h2 {
+        position: relative;
+        font-size: 30px;
+        font-family: "Geist Variable", sans-serif;
+        color: var(--color-de-texto-tipo-1--);
+        margin: 20px 50px;
+        top: 50px;
+    }
+    .ContenedorDeContacto p {
+        position: relative;
+        font-family: "Geist Variable", sans-serif;
+        color: var(--color-de-texto-tipo-1--);
+        width: 500px;
+        font-size: 15px;
+        margin: 20px 50px;
+        top: 50px;
+    }
+    .reservacion button {
+        position: relative;
+        margin: 0px 50px;
+        color: white;
+        border: none;
+        padding: 10px 10px;
+        top: 50px;
+        width: 150px;
+        background-color: rgb(236, 61, 163);
+        color: white;
+        font-weight: 700;
+        font-size: 15px;
+    }
+
+    @media (max-width: 768px) {
+        h2 {
+            font-size: 18px;
+        }
+        .inputBox span {
+            font-size: 13px;
+        }
+        
+        .ContenedorDeContacto {
+         
+            margin-bottom: 10px;
+        }
+        .ContenedorDeContacto h2 {
+            font-size: 25px;
+            margin-left: 30px;
+        }
+        .ContenedorDeContacto p {
+            width: 80%;
+            margin: 20px 30px;
+            font-size: 15px;
+        }
+      
+    .form-container {
+
+        margin-bottom: 0px;
+
+    }
+        .reservacion button {
+            margin-left: 30px;
+        }
     }
 </style>
