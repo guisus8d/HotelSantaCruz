@@ -1,78 +1,78 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
-
-// footer and header
-
+// Componentes
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+
+// Imágenes
 import ImgComida from "../assets/Comida/garnacha.jpg";
-
-// Supports weights 100-900
-import "@fontsource-variable/noto-sans-jp";
-
-// importar imagenes del carrusel
 import Uno from "../../public/PrincipalImg.jpg";
 import Dos from "../../public/segundoImg.jpg";
 import Tres from "../../public/terceroImg.jpg";
-
 import Map from "../assets/map_art.png";
+
+// Fuentes
+import "@fontsource-variable/noto-sans-jp";
 ---
 
 <Layout title="Home | Hotel Santa Cruz Tehuantepec">
 	<Header />
-	<!--  contenedor de informacion principal de la pagina -->
-	<div class="container">
-		<div class="Informacion">
-			<h1>Hotel Santa Cruz Tehuantepec</h1>
-
-			<h3>Bienvenido</h3>
-			<p>
-				Pasa una noche de descanso y tradición. En Hotel Santa Cruz
-				Tehuantepec, cada rincón refleja un ambiente de tranquilidad,
-				confort y autenticidad. Nuestro espacio se encuentra en
-				constante renovación, incorporando detalles artísticos que
-				enriquecen su experiencia y la convierten en una estancia
-				armónica y placentera.
-			</p>
+	
+	<!-- Hero Section -->
+	<section class="hero">
+		<div class="hero-content">
+			<div class="hero-text">
+				<h1>Hotel Santa Cruz Tehuantepec</h1>
+				<h2>Bienvenido</h2>
+				<p>
+					Pasa una noche de descanso y tradición. En Hotel Santa Cruz
+					Tehuantepec, cada rincón refleja un ambiente de tranquilidad,
+					confort y autenticidad. Nuestro espacio se encuentra en
+					constante renovación, incorporando detalles artísticos que
+					enriquecen su experiencia y la convierten en una estancia
+					armónica y placentera.
+				</p>
+			</div>
+			
+			<div class="hero-carousel">
+				<div class="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src={Uno.src} alt="Imagen del hotel 1" loading="lazy" />
+						</div>
+						<div class="carousel-item">
+							<img src={Dos.src} alt="Imagen del hotel 2" loading="lazy" />
+						</div>
+						<div class="carousel-item">
+							<img src={Tres.src} alt="Imagen del hotel 3" loading="lazy" />
+						</div>
+					</div>
+					
+					<div class="carousel-controls">
+						<button class="carousel-control prev" aria-label="Imagen anterior">&#10094;</button>
+						<button class="carousel-control next" aria-label="Imagen siguiente">&#10095;</button>
+					</div>
+					
+					<div class="carousel-indicators">
+						<button class="indicator active" data-slide="0" aria-label="Ir a imagen 1"></button>
+						<button class="indicator" data-slide="1" aria-label="Ir a imagen 2"></button>
+						<button class="indicator" data-slide="2" aria-label="Ir a imagen 3"></button>
+					</div>
+				</div>
+			</div>
 		</div>
-
-		<div class="carrusel">
-			<div class="carrusel-inner">
-				<div class="carrusel-item">
-					<img src={Uno.src} alt="Imagen 1" />
-				</div>
-				<div class="carrusel-item">
-					<img src={Dos.src} alt="Imagen 2" />
-				</div>
-				<div class="carrusel-item">
-					<img src={Tres.src} alt="Imagen 3" />
-				</div>
-			</div>
-
-			<div class="carrusel-controls">
-				<button class="carrusel-control prev">&#10094;</button>
-				<button class="carrusel-control next">&#10095;</button>
-			</div>
-
-			<div class="carrusel-indicators">
-				<div class="indicator active" data-slide="0"></div>
-				<div class="indicator" data-slide="1"></div>
-				<div class="indicator" data-slide="2"></div>
-			</div>
-		</div>
-	</div>
-
-	<div class="contenedorBienvenida">
-		<div class="contenedorSub">
-			<div class="ImageneFondoBienvenida"></div>
-			<div class="contenedorConcepto">
+	</section>
+	
+	<!-- About Section -->
+	<section class="about">
+		<div class="about-content">
+			<div class="about-image"></div>
+			<div class="about-text">
 				<h2>Pasa una buena noche de descanso</h2>
 				<p>
 					La mejor opción para alojarse y disfrutar al máximo de
-					Tehuantepec Descubre un lugar donde la calidez de la
+					Tehuantepec. Descubre un lugar donde la calidez de la
 					hospitalidad oaxaqueña se une con el confort y la
 					tranquilidad. Nuestra ubicación privilegiada en el corazón
 					de Tehuantepec te permite explorar su rica cultura, saborear
@@ -81,544 +81,521 @@ import Map from "../assets/map_art.png";
 				</p>
 			</div>
 		</div>
-	</div>
-
-	<div class="ContenedorComida" data-astro-cid-j7pv25f6="">
-		<div class="InfoComida" data-astro-cid-j7pv25f6="">
-			<h2 data-astro-cid-j7pv25f6="">Sabores de mi tierra</h2>
-			<p data-astro-cid-j7pv25f6="">
-				Nuestro chef, apasionado por los sabores auténticos, transforma
-				ingredientes locales en verdaderas obras culinarias. Cada
-				platillo es una fusión entre tradición y creatividad, pensado
-				para ofrecerle una experiencia gastronómica inolvidable.
-			</p>
+	</section>
+	
+	<!-- Cuisine Section -->
+	<section class="cuisine">
+		<div class="cuisine-content">
+			<div class="cuisine-text">
+				<h2>Sabores de mi tierra</h2>
+				<p>
+					Nuestro chef, apasionado por los sabores auténticos, transforma
+					ingredientes locales en verdaderas obras culinarias. Cada
+					platillo es una fusión entre tradición y creatividad, pensado
+					para ofrecerle una experiencia gastronómica inolvidable.
+				</p>
+			</div>
+			<div class="cuisine-image">
+				<img src={ImgComida.src} alt="Alimentos tradicionales de Tehuantepec" loading="lazy" />
+			</div>
 		</div>
-		<img
-			src={ImgComida.src}
-			alt="Alimentos de Tehuantepec"
-			data-astro-cid-j7pv25f6=""
-		/>
-	</div>
-
-	<div class="ContenedorComoLlegarPrincipal">
-		<div class="ContenedorComoLlegar">
-			<h2>¿Cómo llegar?</h2>
-			<h3>Ubicación</h3>
-
+	</section>
+	
+	<!-- Location Section -->
+	<section class="location">
+		<div class="location-content">
+			<div class="location-text">
+				<h2>¿Cómo llegar?</h2>
+				<h3>Ubicación</h3>
+				<p>
+					Reconocido a nivel mundial por su invaluable riqueza cultural,
+					el Istmo de Tehuantepec se ubica en el estado de Oaxaca, al sur
+					de México, a menos de una hora en avión tanto de la Ciudad de
+					México como de la capital oaxaqueña. <br /><br />
+					La estratégica ubicación de Juchitán, cercana a importantes destinos 
+					de la región como Huatulco, Salina Cruz, Minatitlán y Tuxtla Gutiérrez, 
+					lo convierte en un lugar ideal para explorar y disfrutar.
+				</p>
+			</div>
+			<div class="location-map">
+				<img src={Map.src} alt="Mapa de ubicación del hotel" class="map" loading="lazy" />
+			</div>
+		</div>
+	</section>
+	
+	<!-- Contact Section -->
+	<section class="contact">
+		<div class="contact-content">
+			<h2>¿Necesitas ayuda?</h2>
 			<p>
-				Reconocido a nivel mundial por su invaluable riqueza cultural,
-				el Istmo de Tehuantepec se ubica en el estado de Oaxaca, al sur
-				de México, a menos de una hora en avión tanto de la Ciudad de
-				México como de la capital oaxaqueña. <br /> La estratégica ubicación
-				de Juchitán, cercana a importantes destinos de la región como Huatulco,
-				Salina Cruz, Minatitlán y Tuxtla Gutiérrez, lo convierte en un lugar
-				ideal para explorar y disfrutar.
+				Si tienes alguna pregunta o necesitas más información, no dudes en
+				contactarnos. Estamos aquí para ayudarte a planificar tu estancia y
+				asegurarnos de que tengas una experiencia inolvidable.
 			</p>
-			<img src={Map.src} alt="" class="mapa" />
+			<a href="/Contacto" class="btn-primary">Contactar</a>
 		</div>
-	</div>
-
-	<div class="ContenedorDeAyuda">
-		<h2>¿Necesitas ayuda?</h2>
-		<p>
-			Si tienes alguna pregunta o necesitas más información, no dudes en
-			contactarnos. Estamos aquí para ayudarte a planificar tu estancia y
-			asegurarnos de que tengas una experiencia inolvidable.
-		</p>
-
-		<a href="/Contacto" class="reservacion"><button>Contactar</button></a>
-	</div>
-
+	</section>
+	
 	<Footer />
 </Layout>
 
 <style>
-	html,
-	body {
+	:root {
+		/* Colores principales */
+		--primary-color: #1e3a5f;
+		--secondary-color: #c53030;
+		--accent-color: #d69e2e;
+		--light-bg: #f7f7f7;
+		--dark-bg: #2d3748;
+		--text-light: #ffffff;
+		--text-dark: #2d3748;
+		--text-gray: #718096;
+		
+		/* Espaciado */
+		--section-padding: 4rem 2rem;
+		--content-max-width: 1200px;
+		
+		/* Bordes */
+		--border-radius: 8px;
+		--shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		--shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+	}
+	
+	/* Reset y estilos base */
+	* {
 		margin: 0;
 		padding: 0;
+		box-sizing: border-box;
+	}
+	
+	html, body {
+		font-family: "Geist Variable", sans-serif;
+		line-height: 1.6;
+		color: var(--text-dark);
 		overflow-x: hidden;
+		scroll-behavior: smooth;
 	}
-
-	/* Estilos del carrusel */
-	.carrusel-controls button {
-		display: none;
+	
+	h1, h2, h3, h4, h5, h6 {
+		font-family: "Noto Sans JP Variable", sans-serif;
+		font-weight: 600;
+		line-height: 1.3;
+		margin-bottom: 1rem;
 	}
-	.carrusel {
+	
+	h1 {
+		font-size: 2.5rem;
+	}
+	
+	h2 {
+		font-size: 2rem;
+	}
+	
+	h3 {
+		font-size: 1.5rem;
+	}
+	
+	p {
+		margin-bottom: 1.5rem;
+	}
+	
+	img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+	
+	/* Utilidades */
+	.container {
+		max-width: var(--content-max-width);
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+	
+	.btn-primary {
+		display: inline-block;
+		background-color: var(--primary-color);
+		color: var(--text-light);
+		padding: 0.75rem 1.5rem;
+		border-radius: var(--border-radius);
+		text-decoration: none;
+		font-weight: 600;
+		transition: all 0.3s ease;
+		border: none;
+		cursor: pointer;
+	}
+	
+	.btn-primary:hover {
+		background-color: #2d5a8c;
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-lg);
+	}
+	
+	/* Hero Section */
+	.hero {
+		background: linear-gradient(135deg, var(--primary-color) 0%, #2d5a8c 100%);
+		color: var(--text-light);
+		padding: var(--section-padding);
+	}
+	
+	.hero-content {
+		max-width: var(--content-max-width);
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		align-items: center;
+	}
+	
+	.hero-text h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		color: var(--text-light);
+	}
+	
+	.hero-text h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1.5rem;
+		color: var(--accent-color);
+	}
+	
+	.hero-text p {
+		font-size: 1.1rem;
+		line-height: 1.7;
+	}
+	
+	/* Carousel */
+	.carousel {
 		position: relative;
 		width: 100%;
-		max-width: 800px;
-		margin: 0 auto;
+		border-radius: var(--border-radius);
 		overflow: hidden;
+		box-shadow: var(--shadow-lg);
 	}
-
-	.carrusel-inner {
+	
+	.carousel-inner {
 		display: flex;
 		transition: transform 0.5s ease-in-out;
-		height: 100%; /* Ajusta según necesites */
+		height: 400px;
 	}
-
-	.carrusel-item {
+	
+	.carousel-item {
 		min-width: 100%;
 		height: 100%;
+		opacity: 0;
+		transition: opacity 0.5s ease;
 	}
-
-	.carrusel-item img {
+	
+	.carousel-item.active {
+		opacity: 1;
+	}
+	
+	.carousel-item img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 	}
-
-	.carrusel-control {
+	
+	.carousel-controls {
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		transform: translateY(-50%);
+		padding: 0 1rem;
+	}
+	
+	.carousel-control {
 		background: rgba(0, 0, 0, 0.5);
 		color: white;
 		border: none;
-		padding: 10px;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
 		cursor: pointer;
-		font-size: 18px;
-		z-index: 10;
+		font-size: 1.2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: background 0.3s ease;
 	}
-
-	.carrusel-indicators {
+	
+	.carousel-control:hover {
+		background: rgba(0, 0, 0, 0.7);
+	}
+	
+	.carousel-indicators {
 		position: absolute;
-		bottom: 10px;
+		bottom: 1rem;
 		left: 50%;
 		transform: translateX(-50%);
 		display: flex;
-		gap: 5px;
+		gap: 0.5rem;
 	}
-
+	
 	.indicator {
-		width: 10px;
-		height: 10px;
+		width: 12px;
+		height: 12px;
 		border-radius: 50%;
-		background: var(--color-de-fondo-de-elemntos-tipo-2--);
-		cursor: pointer;
-	}
-
-	.indicator.active {
-		background: white;
-	}
-
-	body {
-		background: rgb(255, 255, 255);
-	}
-
-	/* contenedor principal */
-	.container {
-		display: flex;
-		position: relative;
-		width: 100%;
-		height: 100%;
-		background-color: rgb(255, 255, 255);
-	}
-
-	.Informacion {
-		display: flex;
-		position: relative;
-		display: flex;
-		width: 50%;
-		height: 100%;
-		background: var(--color-de-fondo-de-elemntos-tipo-1--);
-	}
-
-	.Informacion h1 {
-		font-family: "Noto Sans JP Variable", sans-serif;
-		color: var(--color-de-texto-tipo-1--);
-		margin: 150px 50px;
-		font-size: 50px;
-	}
-	.Informacion h3 {
-		font-family: "Noto Sans JP Variable", sans-serif;
-		font-size: 25px;
-		padding: 30px 50px;
-		position: absolute;
-		margin: 300px 5px;
-		width: 450px;
-		color: var(--color-de-texto-tipo-1--);
-	}
-	.Informacion p {
-		font-family: "Geist Variable", sans-serif;
-		font-size: 15px;
-		padding: 30px 50px;
-		position: absolute;
-		margin: 350px 5px;
-		width: 450px;
-		color: var(--color-de-texto-tipo-1--);
-	}
-	.ImagenDeReferencia {
-		position: relative;
-		width: 50%;
-		height: 100%;
-		background-image: url("../../public/PrincipalImg.jpg");
-		background-size: cover;
-		background-position: center;
-		right: 0px;
-		display: inline-block;
-	}
-
-	/* contenedor de bienvenida */
-
-	.contenedorBienvenida {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		background-color: rgb(255, 255, 255);
-	}
-
-	.contenedorSub {
-		position: relative;
-		width: 80%;
-		height: 90%;
-		background-color: white;
-		margin: 10% auto;
-		display: flex;
-	}
-	.ImageneFondoBienvenida {
-		position: relative;
-		width: 30%;
-		height: 100%;
-		background: url("../../public/Fondo.jpg");
-		background-size: cover;
-	}
-
-	.contenedorConcepto {
-		width: 70%;
-		height: 100%;
-		background-color: rgb(245, 244, 244);
-		position: relative;
-	}
-
-	.contenedorConcepto h2 {
-		position: absolute;
-		font-family: "Noto Sans JP Variable", sans-serif;
-		color: var(--color-de-texto-tipo-1--);
-		margin: 140px 50px;
-		font-size: 30px;
-	}
-
-	.contenedorConcepto p {
-		font-family: "Geist Variable", sans-serif;
-		font-size: 15px;
-		padding: 100px 50px;
-		position: absolute;
-		margin: 100px 5px;
-		width: 450px;
-		color: var(--color-de-texto-tipo-1--);
-	}
-
-	/*Contenedor de alimentos*/
-	.ContenedorComida {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		background: var(--color-de-fondo-de-elemntos-tipo-1--);
-		display: flex;
-	
-	}
-	.ContenedorComida img {
-		position: relative;
-		width: 500px;
-		height: 300px;
-		margin: auto;
-	}
-
-	.InfoComida {
-		position: relative;
-		background: rgb(245, 244, 244);
-		height: 100%;
-		width: 40%;
-	}
-
-	.ContenedorComida h2 {
-		position: absolute;
-		font-family: "Noto Sans JP Variable", sans-serif;
-		color: var(--color-de-texto-tipo-1--);
-		margin: 340px 25px;
-		font-size: 30px;
-	}
-
-	.ContenedorComida p {
-		font-family: "Geist Variable", sans-serif;
-		font-size: 15px;
-		padding: 100px 20px;
-		position: absolute;
-		margin: 300px 5px;
-		width: 450px;
-		color: var(--color-de-texto-tipo-1--);
-	}
-
-	/* Contenedor de mapa */
-	.ContenedorComoLlegarPrincipal {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		background-color: rgb(255, 255, 255);
-	}
-
-	.ContenedorComoLlegar {
-		position: relative;
-		width: 80%;
-		height: 90%;
-		background-color: rgb(31, 150, 206);
-		margin: auto;
-		top: 10%;
-	}
-
-	.mapa {
-		width: 60%;
-		position: absolute;
-		right: 0px;
-		top: 0px;
-	}
-
-	.ContenedorComoLlegar h2,
-	p {
-		font-family: "Geist Variable", sans-serif;
-	}
-	.ContenedorComoLlegar h2 {
-		font-size: 30px;
-		position: relative;
-		color: white;
-		margin: 0px 60px;
-		top: 100px;
-	}
-	.ContenedorComoLlegar p {
-		position: relative;
-		display: flex;
-		width: 500px;
-		color: white;
-		margin: 0px 60px;
-		top: 130px;
-	}
-	.ContenedorComoLlegar h3 {
-		font-family: "Geist Variable", sans-serif;
-		position: relative;
-		display: flex;
-		width: 40%;
-		color: rgb(228, 226, 103);
-		margin: 0px 60px;
-		top: 110px;
-		font-size: 14px;
-	}
-
-	/* Contenedor de ayuda */
-	.ContenedorDeAyuda {
-		position: relative;
-		width: 100%;
-		height: 50%;
-		background-color: white;
-	}
-
-	.ContenedorDeAyuda h2 {
-		position: relative;
-		font-size: 30px;
-		font-family: "Geist Variable", sans-serif;
-		color: var(--color-de-texto-tipo-1--);
-		margin: 20px 50px;
-		top: 50px;
-	}
-	.ContenedorDeAyuda p {
-		position: relative;
-		font-family: "Geist Variable", sans-serif;
-		color: var(--color-de-texto-tipo-1--);
-		width: 500px;
-		font-size: 15px;
-		margin: 20px 50px;
-		top: 50px;
-	}
-
-	.reservacion button {
-		position: relative;
-		margin: 0px 50px;
-		color: white;
+		background: rgba(255, 255, 255, 0.5);
 		border: none;
-		padding: 10px 10px;
-		top: 50px;
-		width: 150px;
-		background-color: rgb(236, 61, 163);
-		color: white;
-		font-weight: 700;
-		font-size: 15px;
+		cursor: pointer;
+		transition: background 0.3s ease;
 	}
-
-	@media (max-width: 768px) {
-		    /* ... (tus estilos existentes) ... */
-    
-    /* Añade estos estilos específicos */
-    html, body {
-        overflow-x: hidden;
-        width: 100%;
-    }
-    
-    .container {
-        width: 100vw;
-        overflow: hidden;
-		height: 230vw;
-		margin-bottom: -300px;
 	
-    }
-    
-    .carrusel {
-        width: 100vw;
-        max-width: 100vw;
-        margin: 0;
-        padding: 0;
-        left: 0;
-    }
-    
-    .carrusel-item {
-        min-width: 100vw;
-    }
-    
-    .carrusel-item img {
-        width: 100vw;
-    }
-
-		.ContenedorComoLlegar {
-			width: 100%;
+	.indicator.active {
+		background: var(--text-light);
+	}
+	
+	/* About Section */
+	.about {
+		padding: var(--section-padding);
+		background-color: var(--light-bg);
+	}
+	
+	.about-content {
+		max-width: var(--content-max-width);
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 3rem;
+		background-color: white;
+		border-radius: var(--border-radius);
+		overflow: hidden;
+		box-shadow: var(--shadow);
+	}
+	
+	.about-image {
+		background: url("../../public/Fondo.jpg") center/cover no-repeat;
+		min-height: 400px;
+	}
+	
+	.about-text {
+		padding: 3rem;
+	}
+	
+	.about-text h2 {
+		color: var(--primary-color);
+		margin-bottom: 1.5rem;
+	}
+	
+	.about-text p {
+		color: var(--text-gray);
+		font-size: 1.1rem;
+		line-height: 1.7;
+	}
+	
+	/* Cuisine Section */
+	.cuisine {
+		padding: var(--section-padding);
+		background: linear-gradient(135deg, var(--primary-color) 0%, #2d5a8c 100%);
+		color: var(--text-light);
+	}
+	
+	.cuisine-content {
+		max-width: var(--content-max-width);
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		align-items: center;
+	}
+	
+	.cuisine-text h2 {
+		color: var(--accent-color);
+		margin-bottom: 1.5rem;
+	}
+	
+	.cuisine-text p {
+		font-size: 1.1rem;
+		line-height: 1.7;
+	}
+	
+	.cuisine-image img {
+		border-radius: var(--border-radius);
+		box-shadow: var(--shadow-lg);
+	}
+	
+	/* Location Section */
+	.location {
+		padding: var(--section-padding);
+		background-color: var(--light-bg);
+	}
+	
+	.location-content {
+		max-width: var(--content-max-width);
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		align-items: center;
+	}
+	
+	.location-text h2 {
+		color: var(--primary-color);
+		margin-bottom: 0.5rem;
+	}
+	
+	.location-text h3 {
+		color: var(--accent-color);
+		margin-bottom: 1.5rem;
+		font-size: 1.2rem;
+	}
+	
+	.location-text p {
+		color: var(--text-gray);
+		font-size: 1.1rem;
+		line-height: 1.7;
+	}
+	
+	.location-map .map {
+		border-radius: 0px;
+		box-shadow: none;
+	}
+	
+	/* Contact Section */
+	.contact {
+		padding: var(--section-padding);
+		background-color: white;
+	}
+	
+	.contact-content {
+		max-width: var(--content-max-width);
+		margin: 0 auto;
+		text-align: left;
+	}
+	
+	.contact h2 {
+		color: var(--primary-color);
+		margin-bottom: 1.5rem;
+	}
+	
+	.contact p {
+		color: var(--text-gray);
+		font-size: 1.1rem;
+		margin-bottom: 2rem;
+		max-width: 600px;
+	}
+	
+	/* Responsive Design */
+	@media (max-width: 1024px) {
+		.hero-content,
+		.cuisine-content,
+		.location-content {
+			grid-template-columns: 1fr;
+			gap: 2rem;
 		}
-
-		.ContenedorComoLlegar img {
-			width: 100%;
+		
+		.about-content {
+			grid-template-columns: 1fr;
 		}
-
-		.ContenedorComoLlegar h2 {
-			top: 340px;
-			left: -5%;
+		
+		.about-image {
+			min-height: 300px;
 		}
-		.ContenedorComoLlegar h3 {
-			top: 350px;
-			left: -5%;
+	}
+	
+	@media (max-width: 768px) {
+		:root {
+			--section-padding: 3.5rem 1.5rem;
 		}
-		.ContenedorComoLlegar p {
-			top: 390px;
-			width: 80%;
-			left: -5%;
+		
+		h1 {
+			font-size: 2rem;
 		}
-
-		.Informacion {
-			position: relative;
-			width: 100%;
-			height: 700px;
-			top: 300px;
-			padding: 0px;
+		
+		h2 {
+			font-size: 1.75rem;
 		}
-
-		.Informacion h1 {
-			width: 300px;
-			font-size: 25px;
-			margin: 100px 30px;
-			position: absolute;
+		
+		.hero-text h1 {
+			font-size: 2.25rem;
+			padding-top: 100px;
 		}
-		.Informacion h3 {
-			font-size: 18px;
-			padding: 0px 25px;
-			margin: 180px 5px;
-			position: absolute;
-		}
-		.Informacion p {
-			font-size: 15px;
-			margin: 240px -20px;
-			width: 80%;
-			position: absolute;
-		}
-
-		.carrusel {
-			position: absolute;
+		
+		
+		.carousel-inner {
 			height: 300px;
 		}
-
-		.ImageneFondoBienvenida {
-			display: none;
+		
+		.about-text,
+		.cuisine-text,
+		.location-text {
+			padding: 2rem;
 		}
-
-		.contenedorConcepto h2 {
-			font-size: 25px;
-			width: 80%;
-			margin: 10%;
-			top: 10%;
+		
+		.carousel-controls {
+			padding: 0 0.5rem;
 		}
-
-		.contenedorConcepto p {
-			position: relative;
-			font-size: 15px;
-			width: 80%;
-			padding: 0% 10%;
-			top: 120px;
+		
+		.carousel-control {
+			width: 35px;
+			height: 35px;
+			font-size: 1rem;
 		}
-
-		.contenedorConcepto {
-			width: 100%;
-			height: 600px;
+		
+		/* Mejorar separación entre secciones en móvil */
+		.about,
+		.cuisine,
+		.location,
+		.contact {
+			margin-top: 1.5rem;
+			margin-bottom: 1.5rem;
 		}
-
-		.contenedorSub {
-			position: relative;
-			width: 90%;
-			height: 80%;
-			top: 10%;
+		
+		.hero {
+			margin-bottom: 2rem;
 		}
-
-		.ContenedorComida {
-			position: relative;
-			width: 100%;
-			height: 700px;
-			margin-top: 100px;
+			.location-map .map {
+		border-radius: none;
+		box-shadow: none;
+		width: 100%;
+	}
+	
+	}
+	
+	@media (max-width: 480px) {
+		:root {
+			--section-padding: 3rem 1.2rem;
 		}
-		.InfoComida {
-			position: absolute;
-			width: 100%;
-
-			background-color: var(--color-de-fondo-de-elemntos-tipo-1--);
+		
+		h1 {
+			font-size: 1.75rem;
 		}
-
-		.ContenedorComida p {
-			top: 20px;
-			width: 80%;
-			margin-top: 30px;
+		
+		h2 {
+			font-size: 1.5rem;
 		}
-		.ContenedorComida h2 {
-			position: relative;
-			width: 250px;
-			margin-top: 80px;
-			font-size: 25px;
+		
+		.hero-text h1 {
+			font-size: 2rem;
 		}
-		.ContenedorComida img {
-			position: absolute;
-			width: 300px;
-			height: 200px;
-			margin-top: 400px;
-			left: 50%;
-			transform: translate(-50%, -0%);
+		
+		.carousel-inner {
+			height: 250px;
 		}
-		.ContenedorComoLlegar {
-			height: 1000px;
+		
+		.about-text,
+		.cuisine-text,
+		.location-text {
+			padding: 1.8rem;
 		}
-		.ContenedorDeAyuda {
-			margin-top: 300px;
-			height: 400px;
+		
+		/* Aumentar separación entre secciones en móviles pequeños */
+		.about,
+		.cuisine,
+		.location,
+		.contact {
+			margin-top: 2rem;
+			margin-bottom: 2rem;
 		}
-		.ContenedorDeAyuda h2 {
-			font-size: 25px;
-			margin-left: 30px;
-		}
-		.ContenedorDeAyuda p {
-			width: 70%;
-			margin: 20px 30px;
-			font-size: 15px;
-		}
-		.container {
-			width: 100%;
-		}
-
-		.reservacion button {
-			margin-left: 30px;
-		}
-		.contenedorBienvenida {
-			margin-top: 300px;
+		
+		.hero {
+			margin-bottom: 2.5rem;
 		}
 	}
 </style>
+
 
 <script src="../service/carrusel.js"></script>

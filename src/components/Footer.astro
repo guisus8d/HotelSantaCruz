@@ -1,173 +1,369 @@
 ---
 import HotelSantaCruz from "../assets/HotelSantaCruz.png";
+import ImgFooterFacebook from "../assets/Footer/facebook.png";
 
-// Supports weights 100-900
+// Fuentes
 import "@fontsource-variable/noto-sans-jp";
 import "@fontsource-variable/ibm-plex-sans";
-
-// importar imagenes del footer
-import ImgFooterFacebook from "../assets/Footer/facebook.png";
 ---
 
-<footer>
-    <img
-        class="FooterFacebook"
-        src={ImgFooterFacebook.src}
-        alt="Imagen lofo de Facebook en el footer"
-    />
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Sección de navegación -->
 
-    <div class="footer-content">
-        <nav>
-            <ul>
-                <li><a href="/" id="home">HOME</a></li>
-                <li><a href="/Habitaciones">HABITACIONES</a></li>
-                <li><a href="/Tehuantepec">TEHUANTEPEC</a></li>
-                <li><a href="/contacto">CONTACTO</a></li>
+        <!-- Sección de contacto -->
+        <div class="footer-section">
+            <h3>Contacto</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon" id="IconoTelefono">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            role="img"
+                            aria-label="Teléfono"
+                        >
+                            <title>Teléfono</title>
+                            <path
+                                fill="currentColor"
+                                d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1v3.25a1 1 0 0 1-1 1A17 17 0 0 1 3 6a1 1 0 0 1 1-1h3.25a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.2 2.2z"
+                            ></path>
+                        </svg>
+                    </span>
 
-                <a href="/contacto" class="reservacion">RESERVACIONES</a>
-            </ul>
-        </nav>
+                    <span>+52 971 132 2818</span>
+                </div>
+                <div class="contact-item">
+                    
+                    <span>WhatsApp +52 971 132 2818</span>
+                </div>
+                <div class="contact-item">
+                    
+                    <span>info@hotelsantacruztehuantepec.com</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de redes sociales -->
+        <div class="footer-section">
+            <h3>Síguenos</h3>
+            <div class="social-links">
+                <a href="#" class="social-link" aria-label="Facebook">
+                    <!-- Icono Facebook -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        role="img"
+                        aria-label="Facebook"
+                    >
+                        <title>Facebook</title>
+                        <path
+                            fill="currentColor"
+                            d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.84c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34v6.99C18.34 21.12 22 17 22 12z"
+                        ></path>
+                    </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Instagram">
+                    <!-- Icono de Instagram - estilo moderno minimalista -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        role="img"
+                        aria-label="Instagram"
+                    >
+                        <title>Instagram</title>
+                        <path
+                            fill="currentColor"
+                            d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.505 4.505 0 0 0 12 7.5zm0 7A2.5 2.5 0 1 1 14.5 12 2.503 2.503 0 0 1 12 14.5zM17.5 6a1 1 0 1 0 1 1 1 1 0 0 0-1-1z"
+                        ></path>
+                    </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Twitter"
+                    ><!-- Icono de Twitter clásico -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        role="img"
+                        aria-label="Twitter"
+                    >
+                        <title>Twitter</title>
+                        <path
+                            fill="currentColor"
+                            d="M22.46 6c-.77.35-1.6.58-2.46.69a4.27 4.27 0 0 0 1.88-2.36 8.34 8.34 0 0 1-2.67 1.02A4.21 4.21 0 0 0 16.11 4a4.22 4.22 0 0 0-4.2 4.2c0 .33.04.65.1.96A12 12 0 0 1 3.15 4.9a4.2 4.2 0 0 0 1.3 5.6 4.15 4.15 0 0 1-1.9-.52v.05a4.22 4.22 0 0 0 3.38 4.13c-.47.13-.97.2-1.49.2-.36 0-.72-.03-1.06-.1a4.23 4.23 0 0 0 3.94 2.93A8.47 8.47 0 0 1 2 19.55a12 12 0 0 0 6.29 1.84c7.55 0 11.68-6.26 11.68-11.68 0-.18 0-.36-.01-.54A8.18 8.18 0 0 0 22.46 6z"
+                        ></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
     </div>
-<center>
-    <div class="footer-contact">
-        +52 971 132 2818<br />
-        WhatsApp +52 971 132 2818 <br />
-        info@hotelsantacruztehuantepec.com <br />
-    </div>
-    </center>
-    <center>
+
+    <!-- Línea divisoria -->
+    <div class="footer-divider"></div>
+
+    <!-- Logo y copyright -->
+    <div class="footer-bottom">
         <img
-            class="HotelSantaCruz"
+            class="footer-logo"
             src={HotelSantaCruz.src}
             alt="Logo Hotel Santa Cruz Tehuantepec"
         />
-    </center>
+        <div class="copyright">
+            <p>
+                &copy; 2024 Hotel Santa Cruz Tehuantepec. Todos los derechos
+                reservados.
+            </p>
+        </div>
+    </div>
 </footer>
 
 <style>
-    /* background: linear-gradient(10deg, rgb(6, 20, 58), rgb(23, 59, 158)) */
-    footer {
+    #IconoTelefono {
+        color: #d42d8f;
+    }
+
+    .social-links a{
+        color: #d42d8f;
+    }
+    :root {
+        --footer-bg: linear-gradient(135deg, #06143a 0%, #173b9e 100%);
+        --footer-text: rgba(255, 255, 255, 0.9);
+        --footer-accent: #ec3da3;
+        --footer-hover: #ffffff;
+        --section-spacing: 2rem;
+    }
+
+    .footer {
+        background: var(--footer-bg);
+        color: var(--footer-text);
+        padding: 3rem 1rem 1rem;
         position: relative;
-        width: 100%;
-        height: 500px;
-        background: linear-gradient(10deg, rgb(6, 20, 58), rgb(23, 59, 158));
-        /* background: linear-gradient(10deg, rgb(75, 52, 42), rgb(185, 142, 124)); */
-        display: flex;
+        overflow: hidden;
     }
 
-    .HotelSantaCruz {
-        position: absolute;
-        margin: auto;
-        top: 80%;
-        left: 50%;
-        transform: translate(-50%, 0%);
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--section-spacing);
+        align-items: start;
     }
 
-    .footer-content {
-        position: absolute;
-        color: white;
-        background-color: transparent;
-        width: 700px;
-        height: 300px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        top: -40px;
-    }
-
-    .footer-content li,
-    a,
-    ul {
-        color: rgba(255, 255, 255, 0.877);
-        text-decoration: none;
-        list-style: none;
-        font-size: 13px;
+    .footer-section h3 {
+        font-family: "Noto Sans JP Variable", sans-serif;
+        font-size: 1.25rem;
         font-weight: 600;
-        font-family: "IBM Plex Sans Variable", sans-serif;
-        display: inline-block;
-        margin: 5px;
-    }
-    .reservacion {
-        background-color: rgb(236, 61, 163);
-        padding: 10px 20px;
+        margin-bottom: 1.5rem;
         color: white;
+        position: relative;
     }
 
-    hr {
+    .footer-section h3::after {
+        content: "";
         position: absolute;
-        width: 90%;
-        height: 2px;
-        background-color: white;
-        margin: 0px 65px;
-        top: 90px;
-    }
-
-    .footer-contact {
-        position: absolute;
-        display: flex;
-        width: 200px;
-        height: 300px;
-        color: rgba(255, 255, 255, 0.877);
-        left: 70%;
-        top: 18%;
-        font-weight: 500;
-        font-family: "IBM Plex Sans Variable", sans-serif;
-        font-size: 17px;
-    }
-
-    .FooterFacebook {
-        position: absolute;
+        bottom: -0.5rem;
+        left: 0;
         width: 40px;
-        height: 40px;
-        left: 94%;
-        top: 20px;
-        transform: translate(0%, 0%);
+        height: 2px;
+        background: var(--footer-accent);
     }
 
-    .footer-contact{
-        text-align: left;
+    .footer-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
 
+    .footer-nav li {
+        margin-bottom: 0.75rem;
+    }
+
+    .nav-link {
+        color: var(--footer-text);
+        text-decoration: none;
+        font-family: "IBM Plex Sans Variable", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0.25rem 0;
+        display: inline-block;
+    }
+
+    .nav-link:hover {
+        color: var(--footer-hover);
+        transform: translateX(5px);
+    }
+
+    .reservation-btn {
+        display: inline-block;
+        background: var(--footer-accent);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        font-family: "IBM Plex Sans Variable", sans-serif;
+        font-weight: 600;
+        font-size: 0.9rem;
+        border-radius: 5px;
+        margin-top: 1rem;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .reservation-btn:hover {
+        background: #d42d8f;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(236, 61, 163, 0.3);
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-family: "IBM Plex Sans Variable", sans-serif;
+        font-size: 0.95rem;
+    }
+
+    .contact-icon {
+        font-size: 1.1rem;
+        width: 20px;
+        text-align: center;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.5rem;
+        margin-left: -2rem;
+    }
+
+    .social-link {
+        display: inline-block;
+        transition: transform 0.3s ease;
+        padding: 0.5rem;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0);
+    }
+
+    .social-link:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0);
+    }
+
+    .social-link img {
+        width: 30px;
+        height: 30px;
+        filter: brightness(0) invert(1);
+    }
+
+    .footer-divider {
+        max-width: 1200px;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 2rem auto;
+    }
+
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding-top: 1rem;
+    }
+
+    .footer-logo {
+        height: 60px;
+        width: auto;
+        opacity: 0.9;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+
+    .copyright p {
+        font-family: "IBM Plex Sans Variable", sans-serif;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0;
+    }
+
+    /* Responsive Design */
     @media (max-width: 768px) {
-        footer {
-            height: 100%;
-        }
-        .footer-content {
-            width: 100%;
-            top: 0px;
+        .footer {
+            padding: 2rem 1rem 1rem;
         }
 
-        .HotelSantaCruz {
-            width: 200px;
-        }
-        hr {
-            position: absolute;
-            width: 90%;
-            height: 2px;
-            background-color: white;
-            margin: 0px 20px;
-            top: 90px;
+        .footer-container {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            text-align: center;
         }
 
-        .footer-contact {
-            top: 50%;
-            left: 5%;
-            text-align: left;
-            
-            margin: auto;
+        .footer-section h3::after {
+            left: 50%;
+            transform: translateX(-50%);
         }
-        .footer-contact {
-            background-color: transparent;
-            width: 90%;
-            height: 100px;
+
+        .contact-item {
+            justify-content: center;
         }
-        .FooterFacebook {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            left: 90%;
-            top: 20px;
-            transform: translate(-50%, 0%);
+
+        .social-links {
+            justify-content: center;
+             margin-left: 0rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+        }
+
+        .footer-logo {
+            height: 50px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .footer {
+            padding: 1.5rem 1rem 1rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.1rem;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+        }
+
+        .reservation-btn {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.85rem;
+        }
+
+        .contact-item {
+            font-size: 0.9rem;
+        }
+
+        .social-link img {
+            width: 20px;
+            height: 20px;
         }
     }
 </style>

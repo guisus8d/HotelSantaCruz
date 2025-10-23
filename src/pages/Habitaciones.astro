@@ -12,258 +12,268 @@ const habitaciones = await getCollection("habitaciones");
 import "@fontsource-variable/noto-sans-jp";
 ---
 
-<Layout title="Rooms | Hotel Santa Cruz Tehuantepec">
+<Layout title="Habitaciones | Hotel Santa Cruz Tehuantepec">
     <Header />
 
-    <span class="os">
-        <h3>Donde el diseño mexicano se encuentra con el confort moderno</h3>
-            
-        <p>
-            La armonía entre el cielo y el mar se refleja en cada rincón del
-            Hotel Santa Cruz. Su diseño contemporáneo, inspirado en la esencia
-            mexicana, ofrece un ambiente exclusivo donde la simplicidad y el
-            lujo conviven en equilibrio.
-        </p>
-    </span>
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Nuestras Habitaciones</h1>
+            <p class="hero-subtitle">Donde el diseño mexicano se encuentra con el confort moderno</p>
+            <p class="hero-description">
+                La armonía entre el cielo y el mar se refleja en cada rincón del
+                Hotel Santa Cruz. Su diseño contemporáneo, inspirado en la esencia
+                mexicana, ofrece un ambiente exclusivo donde la simplicidad y el
+                lujo conviven en equilibrio.
+            </p>
+        </div>
+    </section>
 
-    <div class="habitaciones-grid">
-        {
-            // importar las habitaciones y el mapeo
-            habitaciones.map((habitacion) => {
-                const { slug, data } = habitacion;
-                const { title, description, amenities, images } = data;
+    <main class="rooms-container">
+        <div class="container">
+            <div class="rooms-grid">
+                {
+                    habitaciones.map((habitacion) => {
+                        const { slug, data } = habitacion;
+                        const { title, description, amenities, images } = data;
 
-                // retornar todos los datos de las habitaciones
-                return (
-                    <article class="ContenedorDeHabitaciones">
-                       <div class="image-container">
-                        <img
-                            class="ImdDeLasHabitaciones"
-                            src={`../${images}`} 
-                            alt={title}
-                        />
-                        </div>
+                        return (
+                            <article class="room-card">
+                                <div class="room-image-container">
+                                    <img
+                                        class="room-image"
+                                        src={`../${images}`}
+                                        alt={title}
+                                        loading="lazy"
+                                    />
+                                </div>
 
-                        {/* contenedor mostrar la informacion de titulo y su respectiva descripcion */}
-                       
-                        <div class="ContenedorInformacionTituloDescripciones">
-                            <h3>{title}</h3>
+                                <div class="room-content">
+                                    <div class="room-info">
+                                        <h2 class="room-title">{title}</h2>
+                                        <p class="room-description">{description}</p>
+                                    </div>
 
-                            <p>{description}</p>
-                        </div>
+                                    <div class="room-amenities">
+                                        <ul class="amenities-list">
+                                            {amenities.map((item) => (
+                                                <li class="amenity-item">{item}</li>
+                                            ))}
+                                        </ul>
+                                        <a href="/reservas" class="reserve-button">
+                                            Reservar ahora
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+                        );
+                    })
+                }
+            </div>
+        </div>
+    </main>
 
-                        {/* mostrar aditivos de la habitacion  */}
-                        <div class="ContenedorAmenities">
-                        <ul class="amenities-list">
-                            {amenities.map((item) => (
-                                <li>{item}</li>
-                            ))}
-                        </ul>
-                        <a href="" class="BtnReservar">
-                            <buttom>Reservar</buttom>
-                        </a>
-
-                        </div>
-                      
-
-                    </div>  
-
-                    </article>
-                );
-            })
-        }
-    </div>
-<Footer/>
+    <Footer />
 </Layout>
-<style>
+
+<style is:global>
+    :root {
+        --primary-color: #e49928;
+        --text-primary: #333333;
+        --text-secondary: #666666;
+        --background-light: #f8f8f8;
+        --white: #ffffff;
+        --border-radius: 8px;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        --transition: all 0.3s ease;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
     body {
-        background: rgb(245, 244, 244);
-    }
-
-    .os {
-    }
-
-    .os h3,
-    p {
-        position: relative;
-        margin-left: 50px;
-    }
-
-    .os h3 {
-        color: var(--color-de-texto-tipo-2--);
+        background-color: var(--background-light);
         font-family: "Noto Sans JP Variable", sans-serif;
-        font-size: 25px;
-        width: 530px;
-        margin-top: 100px;
-        color: var(--color-de-texto-habitacion-tipo-1--);
-    
+        color: var(--text-primary);
+        line-height: 1.6;
     }
 
-    .os p {
-        color: var(--color-de-texto-tipo-1--);
-        font-family: "Noto Sans JP Variable", sans-serif;
-        font-size: 15px;
-        width: 600px;
-        margin-bottom: 100px;
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
 
-
-
-
-.image-container img {
-  width: 500px;
-  height: 300px;
-  object-fit: cover;    /* recorta sin deformar */
-  object-position: center; /* centra la imagen dentro del recorte */
-}
-    .ImdDeLasHabitaciones {
-        width: 380px;
-
-        overflow: hidden;
-        position: relative;
-        margin-left: 50px;
-        margin-top: 20px;
+    /* Hero Section */
+    .hero-section {
+        background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%);
+        color: var(--white);
+        padding: 80px 0;
+        text-align: center;
     }
 
-    .ContenedorDeHabitaciones{
-        position: relative;
-        width: 100%;
-        height: 300px;
-        background-color: transparent;
+    .hero-title {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        font-weight: 500;
+        color: var(--primary-color);
+    }
+
+    .hero-description {
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+
+    /* Rooms Container */
+    .rooms-container {
+        padding: 80px 0;
+    }
+
+    .rooms-grid {
         display: flex;
-        align-items: center;
-        margin-bottom: 150px;
-        
-
+        flex-direction: column;
+        gap: 60px;
+      
     }
 
-    .ContenedorInformacionTituloDescripciones{
-        position: relative;
+    /* Room Card */
+    .room-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: var(--white);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+    }
+
+    .room-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .room-image-container {
+        overflow: hidden;
+    }
+
+    .room-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+    }
+
+    .room-card:hover .room-image {
+        transform: scale(1.03);
+    }
+
+    .room-content {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .room-title {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        color: var(--text-primary);
+        font-weight: 600;
+    }
+
+    .room-description {
+        color: var(--text-secondary);
+        margin-bottom: 20px;
+        line-height: 1.7;
+    }
+
+    .amenities-list {
+        margin-bottom: 25px;
+    }
+
+    .amenity-item {
+        color: var(--primary-color);
+        margin-bottom: 8px;
+        font-weight: 500;
+        margin-left: 20px;
+    }
+
+    .reserve-button {
         display: inline-block;
-        width: 500px;
-        height: 300px;
-        background-color: transparent;
-        margin-left: 100px;
-
-    }
-
-    .ContenedorAmenities{
-        position: absolute;
-        width: 400px;
-        height: 100px;
-        background-color: transparent;
-        margin-left: 630px;
-        margin-top: 150px;
-
-    }
-
-    .ContenedorAmenities li{
-          color: rgb(228, 152, 40);
-          font-family: "Noto Sans JP Variable", sans-serif;
-          font-size: 15px;
-          display: inline-block;
-          margin-right: 40px;
-          margin-bottom: 20px;
-          margin-left: -20px;
-          font-weight: 600;
-          
-          
-          
-    }
-
-    .BtnReservar{
-        position: relative;
-        background-color:  rgb(228, 152, 40) ;
-        color: var(--color-de-texto-tipo-1--);
-        padding: 10px 40px;
-        font-family: "Noto Sans JP Variable", sans-serif;
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 12px 30px;
+        border-radius: var(--border-radius);
         text-decoration: none;
         font-weight: 600;
-        margin-left: 20px;
-        border-radius: 5px;
-        top: 25px;
-  
-
-    }
-
-    .ContenedorInformacionTituloDescripciones p{
-        width: 450px;
-        margin-left: 0px;
-        font-family: "Noto Sans JP Variable", sans-serif;
-        color: var(--color-de-texto-tipo-1--);
-        font-size: 15px;
-    }
-    .ContenedorInformacionTituloDescripciones h3{
-        font-family: "Noto Sans JP Variable", sans-serif;
-       color: var(--color-de-texto-habitacion-tipo-1--);
-    }
-
-    	@media (max-width: 768px) {
-   
-    .os h3 {
-        margin: 10%;
-        margin-top: 100px;
-        width: 80%;
-        font-size: 20px;
-   
-    
-    }
-
-    .os p {
-        margin: 10%;
-        margin-top: 0px;
-        width: 80%;
-        font-size: 15px;
-    }
-        .ContenedorDeHabitaciones{
-        position: relative;
+        text-align: center;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
         width: 100%;
-        height: 1000px;
-        background-color: transparent;
-        display: flex;
-        align-items: center;
-        margin-bottom: 50px;
-        margin-top: 100px;
-
     }
 
-.image-container img {
-    position: absolute;
-  width: 90%;
-  margin: 5%;
-  height: 300px;
-  object-fit: cover;   
-  object-position: center; 
-  top: 0px;
-
-}
-
-   .ContenedorInformacionTituloDescripciones{
-    width: 80%;
-    display: block;
-    position: absolute;
-    top: 350px;
-    margin: 10%;
-   }
-
-   .ContenedorInformacionTituloDescripciones p{
-     width: 100%;
-   }
-    .ContenedorAmenities{
-      
-        position: absolute;
-        width: 80%;
-        height: 100px;
-        background-color: transparent;
-        margin-left: 5%;
-        margin-top: 350px;
-        
-
+    .reserve-button:hover {
+        background-color: #d18a20;
+        transform: translateY(-2px);
     }
-    .ContenedorAmenities li{
-        display: block;
 
-    }
-  
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .hero-section {
+            padding: 60px 0;
         }
+
+        .hero-title {
+            font-size: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+        }
+
+        .rooms-container {
+            padding: 60px 0;
+        }
+
+        .room-card {
+            grid-template-columns: 1fr;
+        }
+
+        .room-content {
+            padding: 25px;
+        }
+
+        .room-title {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            padding: 0 15px;
+        }
+
+        .hero-title {
+            font-size: 1.8rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+        }
+
+        .room-content {
+            padding: 20px;
+        }
+    }
 </style>
