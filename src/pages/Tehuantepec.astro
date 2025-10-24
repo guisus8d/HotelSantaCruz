@@ -3,24 +3,625 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-
-
+import MapTehuantepec from "../../public/map-tehuantepec.png"
 import TehuantepecParner from "../assets/Tehuantepec/Tehuantepec-Parner.jpg"
 ---
 
 <Layout title="Tehuantepec | Hotel Santa Cruz Tehuantepec">
     <Header />
-    <img class="TehuantepecParner" src={TehuantepecParner.src} alt="Parner imagen de Tehuantepec">
+
+    <main>
+        <!-- Sección Hero / Destino -->
+        <section class="destino-hero">
+            <div class="hero-image-container">
+                <img class="TehuantepecParner" src={TehuantepecParner.src} alt="Vista panorámica de Tehuantepec y su cultura vibrante" />
+            </div>
+            <div class="hero-content">
+                <h1>Tehuantepec</h1>
+                <p class="hero-subtitle">La joya del Istmo de Oaxaca. Un destino rico en historia, cultura, tradiciones y una gastronomía inigualable.</p>
+            </div>
+        </section>
+
+        <!-- Sección Destino con Alma -->
+        <section class="destino-alma section-container">
+            <div class="content-wrapper">
+                <h2>Destino con Alma</h2>
+                <p>Tehuantepec se distingue por su profunda herencia cultural zapoteca y su imponente presencia histórica. Es una tierra de mujeres fuertes, mercados vibrantes, trajes típicos de gran colorido y festividades únicas que reflejan la autenticidad y el orgullo de su gente.</p>
+            </div>
+        </section>
+
+        <!-- Sección Ubicación y Conectividad -->
+        <section class="ubicacion-conectividad section-container">
+            <div class="content-wrapper">
+                <h2>Ubicación y Conectividad</h2>
+                <div class="ubicacion-grid">
+                    <div class="ubicacion-texto">
+                        <p>Estratégicamente ubicado en el Istmo de Oaxaca, Tehuantepec es un nodo de conexión vital con las principales ciudades de Oaxaca, Chiapas y Veracruz. Su excelente conectividad terrestre por carretera facilita el acceso a este corazón cultural del sureste mexicano, permitiéndote sumergirte en una experiencia auténtica.</p>
+                        <div class="conectividad-info">
+                            <div class="conectividad-item">
+                                <svg class="conectividad-icon" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor" d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5H6.5C5.84 5 5.29 5.42 5.08 6.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                                </svg>
+                                <span>Excelente conexión por carretera</span>
+                            </div>
+                            <div class="conectividad-item">
+                                <svg class="conectividad-icon" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor" d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                                </svg>
+                                <span>Acceso fácil desde ciudades principales</span>
+                            </div>
+                            <div class="conectividad-item">
+                                <svg class="conectividad-icon" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                                <span>Ubicación estratégica en el Istmo</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ubicacion-mapa">
+                        <div class="mapa-container">
+                            <img src={MapTehuantepec.src} alt="Mapa de ubicación de Tehuantepec en el Istmo de Oaxaca" class="mapa-imagen" />
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Actividades -->
+        <section class="actividades section-container">
+            <div class="content-wrapper">
+                <h2>Planea tus Actividades</h2>
+                <p>Para nuestros huéspedes que buscan sumergirse en la esencia de Tehuantepec, contamos con un equipo de guías locales expertos que lo llevarán a descubrir los tesoros culturales e históricos del destino. Tours que le regalan autenticidad y aprendizaje.</p>
+                <ul class="lista-tours">
+                    <li>
+                        <svg class="tour-icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-8 14H7v-2h4v2zm3-4H7v-2h7v2zm3-4H7V7h10v2z"/>
+                        </svg>
+                        Recorrido por el Centro Histórico y el Palacio Municipal
+                    </li>
+                    <li>
+                        <svg class="tour-icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/>
+                        </svg>
+                        Visita al Mercado de Tehuantepec
+                    </li>
+                    <li>
+                        <svg class="tour-icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                        </svg>
+                        Conoce la Casa de la Cultura y el Museo de la Ciudad
+                    </li>
+                    <li>
+                        <svg class="tour-icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        Tour a las Ruinas de Guiengola
+                    </li>
+                    <li>
+                        <svg class="tour-icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                        </svg>
+                        Vive la Velas Istmeñas (dependiendo de la temporada)
+                    </li>
+                    <li>
+                        <svg class="tour-icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z"/>
+                        </svg>
+                        Degustación de Gastronomía Local
+                    </li>
+                    <li>
+                        <svg class="tour-icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H3V8h2v4h2V8h2v4h2V8h2v4h2V8h2v4h2V8h2v8z"/>
+                        </svg>
+                        Visita a Talleres de Artesanas Tehuanas
+                    </li>
+                    <li>
+                        <svg class="tour-icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/>
+                        </svg>
+                        Excursión a Salina Cruz y sus playas cercanas
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección Reserva y Eventos -->
+        <section class="reserva-eventos section-container">
+            <div class="content-wrapper">
+                <h2>Reserva tu Próximo Viaje</h2>
+                <p>Tehuantepec es sede de festividades y eventos culturales de profundo significado. Gracias a nuestra ubicación céntrica, somos los anfitriones perfectos para que viva estas experiencias únicas. Reserva tu habitación para las próximas celebraciones y encuentra la mejor opción para tus necesidades.</p>
+
+                <div class="lista-eventos">
+                    <article class="evento">
+                        <div class="evento-icon">
+                            <svg viewBox="0 0 24 24" width="40" height="40">
+                                <path fill="currentColor" d="M9 21c0 .5.4 1 1 1h4c.6 0 1-.5 1-1v-1H9v1zm3-19C8.1 2 5 5.1 5 9c0 2.4 1.2 4.5 3 5.7V17c0 .5.4 1 1 1h6c.6 0 1-.5 1-1v-2.3c1.8-1.3 3-3.4 3-5.7 0-3.9-3.1-7-7-7z"/>
+                            </svg>
+                        </div>
+                        <h3>Las Velas Istmeñas</h3>
+                        <p class="evento-mes">Mayo</p>
+                        <p>Las festividades más emblemáticas del Istmo. Son grandes celebraciones comunitarias con música, baile, trajes regionales, flores y comida. Cada barrio y gremio celebra su "Vela" en honor a un santo patrón, siendo una muestra incomparable de la cultura zapoteca.</p>
+                    </article>
+
+                    <article class="evento">
+                        <div class="evento-icon">
+                            <svg viewBox="0 0 24 24" width="40" height="40">
+                                <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3>Feria Regional de Tehuantepec</h3>
+                        <p class="evento-mes">Marzo - Abril</p>
+                        <p>Una gran feria que combina tradición, comercio y diversión. Se realizan eventos culturales, exposiciones ganaderas y agroindustriales, conciertos, juegos mecánicos y se puede disfrutar de la rica gastronomía local.</p>
+                    </article>
+
+                    <article class="evento">
+                        <div class="evento-icon">
+                            <svg viewBox="0 0 24 24" width="40" height="40">
+                                <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z"/>
+                            </svg>
+                        </div>
+                        <h3>Festival de la Diosa Xquenda</h3>
+                        <p class="evento-mes">Octubre</p>
+                        <p>Evento cultural que rinde homenaje a las raíces prehispánicas de la región. Incluye ceremonias, danzas tradicionales, exposiciones de arte y narrativa, buscando preservar y promover la herencia indígena del Istmo.</p>
+                    </article>
+
+                    <article class="evento">
+                        <div class="evento-icon">
+                            <svg viewBox="0 0 24 24" width="40" height="40">
+                                <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                            </svg>
+                        </div>
+                        <h3>Celebración del Día de Muertos</h3>
+                        <p class="evento-mes">Noviembre</p>
+                        <p>Una experiencia profundamente espiritual y colorida. Se pueden visitar los panteones adornados con flores, velas y ofrendas, presenciando una tradición donde las familias se reúnen para honrar y recordar a sus ancestros.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+      	<!-- Contact Section -->
+	<section class="contact">
+		<div class="contact-content">
+			<h2>¿Necesitas ayuda?</h2>
+			<p>
+				Si tienes alguna pregunta o necesitas más información, no dudes en
+				contactarnos. Estamos aquí para ayudarte a planificar tu estancia y
+				asegurarnos de que tengas una experiencia inolvidable.
+			</p>
+			<a href="/Contacto" class="btn-primary">Contactar</a>
+		</div>
+	</section>
+	
+    </main>
 
     <Footer />
 </Layout>
 
+<style is:global>
+    :root {
+        /* Colores principales */
+        --primary-color: #1e3a5f;
+        --secondary-color: #c53030;
+        --accent-color: #d69e2e;
+        --light-bg: #f7f7f7;
+        --dark-bg: #2d3748;
+        --text-light: #ffffff;
+        --text-dark: #2d3748;
+        --text-gray: #718096;
+        
+        /* Espaciado */
+        --section-padding: 4rem 2rem;
+        --content-max-width: 1200px;
+        
+        /* Bordes */
+        --border-radius: 8px;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
 
-<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-    .TehuantepecParner{
+    body {
+        font-family: "Geist Variable", "Noto Sans JP Variable", sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background-color: #fff;
+    }
+
+    .TehuantepecParner {
+        width: 100%;
+        height: 60vh;
+        object-fit: cover;
+        display: block;
+    }
+
+    main {
+        overflow-x: hidden;
+    }
+
+    /* Contenedores generales */
+    .section-container {
+        padding: var(--section-padding);
+    }
+
+    .content-wrapper {
+        max-width: var(--content-max-width);
+        margin: 0 auto;
+    }
+
+    /* Tipografía */
+    h1 {
+        color: var(--primary-color);
+       margin-bottom: 1.75rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    h2 {
+        color: var(--primary-color);
+       margin-bottom: 1.75rem;
+       margin-bottom: 1.75rem;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    h3 {
+        color: var(--secondary-color);
+     margin-bottom: 1.75rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+
+    p {
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        color: var(--text-dark);
+        font-size: 1.1rem;
+    }
+
+    /* Sección Hero */
+    .destino-hero {
+        position: relative;
+        margin-bottom: 0;
+    }
+
+    .hero-content {
+        padding: 4rem 2rem;
+        text-align: center;
+        background: linear-gradient(135deg, var(--primary-color) 0%, #2d4a7a 100%);
+        color: var(--text-light);
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--text-light);
+        opacity: 0.95;
+    }
+
+    /* Sección Ubicación - Grid mejorado */
+    .ubicacion-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .ubicacion-texto {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .conectividad-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .conectividad-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        background: var(--light-bg);
+        border-radius: var(--border-radius);
+        border-left: 3px solid var(--accent-color);
+    }
+
+    .conectividad-icon {
+        color: var(--primary-color);
+        min-width: 24px;
+    }
+
+    .ubicacion-mapa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mapa-container {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .mapa-imagen {
         width: 100%;
         height: auto;
+        margin-left: -5%;
         
+        width: 110%;
+     
+    }
+
+
+
+    /* Secciones con fondo alternado */
+    .destino-alma {
+        background-color: var(--light-bg);
+    }
+
+    .ubicacion-conectividad {
+        background-color: #04b3f1;
+    }
+
+    .actividades {
+        background-color: var(--light-bg);
+    }
+
+    .reserva-eventos {
+        background-color: #fff;
+    }
+
+
+
+    	
+	/* Contact Section */
+	.contact {
+		padding: var(--section-padding);
+		background-color: white;
+	}
+	
+	.contact-content {
+		max-width: var(--content-max-width);
+		margin: 0 auto;
+		text-align: left;
+	}
+	
+	.contact h2 {
+		color: var(--primary-color);
+		margin-bottom: 1.75rem;
+        text-align: left;
+        font-size: 1.5rem;
+	}
+	
+	.contact p {
+		color: var(--text-gray);
+		font-size: 1.1rem;
+		margin-bottom: 2rem;
+		max-width: 600px;
+	}
+    	.btn-primary {
+		display: inline-block;
+		background-color: var(--primary-color);
+		color: var(--text-light);
+		padding: 0.75rem 1.5rem;
+		border-radius: var(--border-radius);
+		text-decoration: none;
+		font-weight: 600;
+		transition: all 0.3s ease;
+		border: none;
+		cursor: pointer;
+	}
+	
+	.btn-primary:hover {
+		background-color: #2d5a8c;
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-lg);
+	}
+
+
+
+
+    /* Lista de Tours */
+    .lista-tours {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
+        margin-top: 2rem;
+    }
+
+    .lista-tours li {
+        background: #fff;
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        border-left: 4px solid var(--accent-color);
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-weight: 500;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .tour-icon {
+        color: var(--primary-color);
+        flex-shrink: 0;
+        margin-top: 0.1rem;
+    }
+
+    .lista-tours li:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    /* Lista de Eventos con Iconos */
+    .lista-eventos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .evento {
+        border: 1px solid #e2e8f0;
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        background: #fff;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+        text-align: center;
+        position: relative;
+    }
+
+    .evento-icon {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .evento:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--accent-color);
+    }
+
+    .evento-mes {
+        font-weight: bold;
+        color: var(--secondary-color);
+        font-style: italic;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        background: var(--light-bg);
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        display: inline-block;
+    }
+
+    /* Botón de Contacto */
+    .boton-contacto {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: var(--text-light);
+        padding: 1rem 2.5rem;
+        text-decoration: none;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        border: 2px solid var(--secondary-color);
+        margin-top: 1rem;
+    }
+
+    .boton-contacto:hover {
+        background-color: transparent;
+        color: var(--secondary-color);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        .section-container {
+            padding: 3rem 1.5rem;
+        }
+
+        .ubicacion-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .ubicacion-texto {
+            order: 2;
+        }
+
+        .ubicacion-mapa {
+            order: 1;
+        }
+
+        .mapa-container {
+            max-width: 100%;
+        }
+
+        .mapa-overlay {
+            display: flex;
+        }
+
+        .mapa-texto-mobile {
+            font-size: 1rem;
+            padding: 1rem;
+        }
+
+        .lista-tours,
+        .lista-eventos {
+            grid-template-columns: 1fr;
+        }
+
+        .TehuantepecParner {
+            height: 40vh;
+        }
+
+        .hero-content {
+            padding: 3rem 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+        }
+
+        .evento-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+    
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        .section-container {
+            padding: 2rem 1rem;
+        }
+
+        .evento,
+        .lista-tours li {
+            padding: 1.25rem;
+        }
+
+        .conectividad-item {
+            flex-direction: column;
+            text-align: center;
+            gap: 0.5rem;
+        }
+
+        .mapa-texto-mobile {
+            font-size: 0.9rem;
+        }
     }
 </style>
