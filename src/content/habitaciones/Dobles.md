@@ -1,6 +1,6 @@
 ---
 title: DOBLES
-description: Las habitaciones Doble Plus cuentan con dos camas matrimoniales y han sido recientemente remodeladas para ofrecer un espacio más amplio, fresco y acogedor, ideal tanto para viajes de negocios como familiares.
+description: Las habitaciones Dobles cuentan con dos camas matrimoniales y han sido recientemente remodeladas para ofrecer un espacio más amplio, fresco y acogedor, ideal tanto para viajes de negocios como familiares.
 amenities:
   -  WiFi
   -  TV 4K
